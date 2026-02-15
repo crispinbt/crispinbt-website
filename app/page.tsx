@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 import { Hero } from "@/components/Hero";
 import { AnimateSection } from "@/components/AnimateSection";
@@ -164,54 +163,39 @@ export default function HomePage() {
           <p className="text-center text-sm font-medium text-[var(--muted-foreground)]">
             Trusted by leading UK brands
           </p>
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-16 gap-y-8">
-            <Image
-              src="https://logo.clearbit.com/penguinrandomhouse.com"
-              alt="Penguin Random House"
-              width={120}
-              height={40}
-              className="h-8 w-auto object-contain opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
-            />
-            <Image
-              src="https://logo.clearbit.com/imagination.com"
-              alt="Imagination Technologies"
-              width={120}
-              height={40}
-              className="h-8 w-auto object-contain opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
-            />
-            <Image
-              src="https://logo.clearbit.com/gocompare.com"
-              alt="GoCompare"
-              width={120}
-              height={40}
-              className="h-8 w-auto object-contain opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
-            />
-            <Image
-              src="https://logo.clearbit.com/amber.energy"
-              alt="Amber Energy"
-              width={120}
-              height={40}
-              className="h-8 w-auto object-contain opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
-            />
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-6">
+            {[
+              "Penguin Random House",
+              "Imagination Technologies",
+              "GoCompare",
+              "Amber Energy",
+            ].map((name) => (
+              <div
+                key={name}
+                className="rounded-lg border border-[var(--border)] bg-[var(--card-bg)] px-6 py-3 text-center text-sm font-medium text-[var(--muted-foreground)] transition-colors hover:border-[var(--accent)]/30 hover:text-[var(--primary)]"
+              >
+                {name}
+              </div>
+            ))}
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-8 text-center text-sm text-[var(--muted-foreground)]">
             <div>
               <span className="block text-2xl font-bold text-[var(--accent)]">
-                ~10
+                10
               </span>
-              years experience
+              years in SEO
             </div>
             <div>
               <span className="block text-2xl font-bold text-[var(--accent)]">
-                50+
+                60+
               </span>
-              projects completed
+              projects delivered
             </div>
             <div>
               <span className="block text-2xl font-bold text-[var(--accent)]">
-                100%+
+                2x
               </span>
-              typical traffic increases
+              average organic growth achieved
             </div>
           </div>
         </div>
