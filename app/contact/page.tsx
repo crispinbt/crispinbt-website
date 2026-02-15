@@ -50,21 +50,21 @@ export default function ContactPage() {
           <li>
             <strong>Email:</strong>{" "}
             <a
-              href="mailto:hello@crispinbt.co.uk"
+              href="mailto:crispinbt@gmail.com"
               className="text-[var(--accent)] hover:underline"
             >
-              hello@crispinbt.co.uk
+              crispinbt@gmail.com
             </a>
           </li>
           <li>
             <strong>LinkedIn:</strong>{" "}
             <a
-              href="https://www.linkedin.com/in/crispinbodentebbutt"
+              href="https://www.linkedin.com/in/crispinbt"
               target="_blank"
               rel="noopener noreferrer"
               className="text-[var(--accent)] hover:underline"
             >
-              linkedin.com/in/crispinbodentebbutt
+              linkedin.com/in/crispinbt
             </a>
           </li>
         </ul>

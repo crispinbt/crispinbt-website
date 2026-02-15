@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "About | Crispin Boden-Tebbutt - SEO Consultant",
@@ -9,10 +10,24 @@ export const metadata: Metadata = {
 export default function AboutPage() {
   return (
     <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
-      <header>
-        <h1 className="text-3xl font-bold text-[var(--primary)]">
-          About Crispin
-        </h1>
+      <header className="flex flex-col gap-6 sm:flex-row sm:items-start">
+        <div className="relative h-48 w-48 shrink-0 overflow-hidden rounded-xl">
+          <Image
+            src="/images/headshot.jpg"
+            alt="Crispin Boden-Tebbutt"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
+        <div>
+          <h1 className="text-3xl font-bold text-[var(--primary)]">
+            About Crispin
+          </h1>
+          <p className="mt-2 text-[var(--muted-foreground)]">
+            SEO Consultant · Swansea, South Wales
+          </p>
+        </div>
       </header>
 
       <div className="mt-12 space-y-8 text-[var(--muted-foreground)]">
@@ -70,7 +85,7 @@ export default function AboutPage() {
           </h2>
           <p className="mt-4">
             <a
-              href="https://www.linkedin.com/in/crispinbodentebbutt"
+              href="https://www.linkedin.com/in/crispinbt"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium text-[var(--accent)] hover:underline"

@@ -153,7 +153,7 @@ export default function HomePage() {
         primaryCta={{ label: "Get Free Audit", href: "/audit" }}
         secondaryCta={{ label: "Book Consultation", href: "/contact" }}
         tertiaryCta={{ label: "View Services", href: "/services" }}
-        imageSrc="/images/headshot-placeholder.svg"
+        imageSrc="/images/headshot.jpg"
         imageAlt="Crispin Boden-Tebbutt, SEO Consultant"
       />
 
@@ -164,16 +164,35 @@ export default function HomePage() {
           <p className="text-center text-sm font-medium text-[var(--muted-foreground)]">
             Trusted by leading UK brands
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-12 opacity-80">
-            <span className="font-semibold text-[var(--primary)]">
-              Penguin Random House
-            </span>
-            <span className="font-semibold text-[var(--primary)]">
-              Imagination Technologies
-            </span>
-            <span className="font-semibold text-[var(--primary)]">
-              GoCompare
-            </span>
+          <div className="mt-8 flex flex-wrap items-center justify-center gap-x-16 gap-y-8">
+            <Image
+              src="https://logo.clearbit.com/penguinrandomhouse.com"
+              alt="Penguin Random House"
+              width={120}
+              height={40}
+              className="h-8 w-auto object-contain opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
+            />
+            <Image
+              src="https://logo.clearbit.com/imagination.com"
+              alt="Imagination Technologies"
+              width={120}
+              height={40}
+              className="h-8 w-auto object-contain opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
+            />
+            <Image
+              src="https://logo.clearbit.com/gocompare.com"
+              alt="GoCompare"
+              width={120}
+              height={40}
+              className="h-8 w-auto object-contain opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
+            />
+            <Image
+              src="https://logo.clearbit.com/amber.energy"
+              alt="Amber Energy"
+              width={120}
+              height={40}
+              className="h-8 w-auto object-contain opacity-80 grayscale hover:opacity-100 hover:grayscale-0 transition-all"
+            />
           </div>
           <div className="mt-8 flex flex-wrap justify-center gap-8 text-center text-sm text-[var(--muted-foreground)]">
             <div>

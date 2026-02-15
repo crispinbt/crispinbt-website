@@ -20,7 +20,7 @@ Submissions are also stored in the Netlify dashboard under **Forms** for 30 days
 
 1. **Create a Calendly account** at [calendly.com](https://calendly.com) (free tier is fine).
 2. **Create an event type** (e.g. "30-min Consultation") and set availability.
-3. **Copy your scheduling link** (e.g. `https://calendly.com/your-username/30min`).
+3. **Copy your scheduling link** (e.g. `https://calendly.com/crispinbt/30min`).
 4. **Add to Netlify:**
    - Netlify Dashboard → Site settings → **Environment variables**
    - Add variable:
@@ -28,7 +28,9 @@ Submissions are also stored in the Netlify dashboard under **Forms** for 30 days
      - **Value:** `https://calendly.com/your-username/your-event-type`
 5. **Redeploy** so the new env var is used.
 
-The embed on the Contact page will automatically use this URL. If not set, it falls back to `https://calendly.com/crispinbodentebbutt/30min`.
+The embed on the Contact page will automatically use this URL. If not set, it falls back to `https://calendly.com/crispinbt/30min`.
+
+**Calendly API token:** If you have a Calendly API token for server-side integrations, store it in Netlify as `CALENDLY_API_TOKEN` (or similar). Never commit API tokens to the repository.
 
 ---
 

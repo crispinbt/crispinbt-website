@@ -4,8 +4,8 @@ export function OrganizationSchema() {
     "@type": "Organization",
     name: "Crispin Boden-Tebbutt",
     url: "https://crispinbt.co.uk",
-    logo: "https://crispinbt.co.uk/images/headshot-placeholder.svg",
-    sameAs: ["https://www.linkedin.com/in/crispinbodentebbutt"],
+    logo: "https://crispinbt.co.uk/images/headshot.jpg",
+    sameAs: ["https://www.linkedin.com/in/crispinbt"],
   };
   return (
     <script
@@ -22,7 +22,7 @@ export function PersonSchema() {
     name: "Crispin Boden-Tebbutt",
     jobTitle: "SEO Consultant",
     url: "https://crispinbt.co.uk",
-    sameAs: ["https://www.linkedin.com/in/crispinbodentebbutt"],
+    sameAs: ["https://www.linkedin.com/in/crispinbt"],
   };
   return (
     <script

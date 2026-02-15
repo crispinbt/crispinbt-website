@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import { CTA } from "./CTA";
 
 type HeroProps = {
@@ -43,12 +42,9 @@ export function Hero({
               </CTA>
             )}
             {tertiaryCta && (
-              <Link
-                href={tertiaryCta.href}
-                className="text-sm font-medium text-[var(--accent)] hover:underline"
-              >
+              <CTA href={tertiaryCta.href} variant="secondary">
                 {tertiaryCta.label}
-              </Link>
+              </CTA>
             )}
           </div>
         </div>

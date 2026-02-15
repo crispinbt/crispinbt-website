@@ -8,7 +8,7 @@ type CalendlyEmbedProps = {
 
 const defaultUrl =
   process.env.NEXT_PUBLIC_CALENDLY_URL ||
-  "https://calendly.com/crispinbodentebbutt/30min";
+  "https://calendly.com/crispinbt/30min";
 
 export function CalendlyEmbed({ url = defaultUrl }: CalendlyEmbedProps) {
   return (
