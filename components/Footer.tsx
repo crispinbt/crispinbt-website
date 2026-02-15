@@ -12,7 +12,7 @@ const footerLinks = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-[var(--border)] bg-[var(--primary)] text-white">
+    <footer className="border-t border-[var(--border)] bg-[var(--footer-bg)] text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
           <div>

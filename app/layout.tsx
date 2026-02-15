@@ -9,6 +9,7 @@ import {
   PersonSchema,
   LocalBusinessSchema,
 } from "@/components/JsonLd";
+import { ThemeScript } from "@/components/ThemeScript";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -51,8 +52,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${manrope.variable} ${geistMono.variable}`}>
+    <html lang="en" className={`${manrope.variable} ${geistMono.variable}`} suppressHydrationWarning>
       <body className="flex min-h-screen flex-col antialiased">
+        <ThemeScript />
         <MotionConfig reducedMotion="user">
           <OrganizationSchema />
           <PersonSchema />

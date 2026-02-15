@@ -7,7 +7,7 @@ type TestimonialProps = {
 
 export function Testimonial({ quote, name, company, result }: TestimonialProps) {
   return (
-    <blockquote className="rounded-xl border border-[var(--border)] bg-white p-6">
+    <blockquote className="rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 shadow-lg">
       <p className="text-[var(--primary)]">&ldquo;{quote}&rdquo;</p>
       <footer className="mt-4">
         <cite className="not-italic">

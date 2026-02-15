@@ -1,20 +1,37 @@
 @import "tailwindcss";
 
 :root {
+  --background: #0a0f1a;
+  --foreground: #f1f5f9;
+  --primary: #f1f5f9;
+  --primary-foreground: #0a0f1a;
+  --primary-light: #94a3b8;
+  --accent: #14b8a6;
+  --accent-foreground: #0a0f1a;
+  --accent-hover: #2dd4bf;
+  --muted: #64748b;
+  --muted-foreground: #94a3b8;
+  --border: #1e293b;
+  --card-bg: #0f172a;
+  --card-border: #1e293b;
+  --footer-bg: #020617;
+}
+
+[data-theme="light"] {
   --background: #ffffff;
   --foreground: #0f172a;
-  /* Primary: navy/deep blue */
   --primary: #0f172a;
   --primary-foreground: #ffffff;
   --primary-light: #1e3a5f;
-  /* Accent: teal */
   --accent: #0d9488;
   --accent-foreground: #ffffff;
   --accent-hover: #0f766e;
-  /* Neutrals */
   --muted: #64748b;
   --muted-foreground: #475569;
   --border: #e2e8f0;
+  --card-bg: #ffffff;
+  --card-border: #e2e8f0;
+  --footer-bg: #0f172a;
 }
 
 @theme inline {
@@ -39,4 +56,38 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Gradient mesh background */
+.bg-mesh {
+  background-image:
+    radial-gradient(at 40% 20%, rgba(20, 184, 166, 0.15) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(30, 58, 95, 0.3) 0px, transparent 50%),
+    radial-gradient(at 0% 50%, rgba(20, 184, 166, 0.08) 0px, transparent 50%);
+}
+
+/* Grid pattern overlay */
+.bg-grid {
+  background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+[data-theme="light"] .bg-grid {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+[data-theme="light"] .bg-mesh {
+  background-image:
+    radial-gradient(at 40% 20%, rgba(13, 148, 136, 0.08) 0px, transparent 50%),
+    radial-gradient(at 80% 0%, rgba(30, 58, 95, 0.05) 0px, transparent 50%);
+}
+
+/* Form inputs inherit theme */
+form input:not([type="submit"]):not([type="hidden"]),
+form select,
+form textarea {
+  background-color: var(--card-bg);
+  color: var(--foreground);
 }

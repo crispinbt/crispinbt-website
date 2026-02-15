@@ -75,7 +75,7 @@ export default function PackagesPage() {
             className={`rounded-xl border p-8 ${
               pkg.highlighted
                 ? "border-[var(--accent)] bg-[var(--accent)]/5"
-                : "border-[var(--border)] bg-white"
+                : "border-[var(--border)] bg-[var(--card-bg)]"
             }`}
           >
             {pkg.highlighted && (

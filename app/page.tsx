@@ -159,7 +159,7 @@ export default function HomePage() {
 
       {/* Trust signals */}
       <AnimateSection>
-      <section className="border-t border-[var(--border)] bg-[var(--primary)]/5 py-16">
+      <section className="relative border-t border-[var(--border)] py-16 bg-mesh bg-grid">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <p className="text-center text-sm font-medium text-[var(--muted-foreground)]">
             Trusted by leading UK brands
@@ -233,7 +233,7 @@ export default function HomePage() {
       </AnimateSection>
 
       <AnimateSection delay={0.1}>
-      <section className="border-t border-[var(--border)] bg-white py-16">
+      <section className="relative border-t border-[var(--border)] py-16 bg-mesh">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <h2 className="text-2xl font-bold text-[var(--primary)]">
             What clients say
@@ -263,24 +263,24 @@ export default function HomePage() {
       </section>
 
       {/* Final CTA */}
-      <section className="border-t border-[var(--border)] bg-[var(--primary)] py-16 text-center text-white">
+      <section className="relative border-t border-[var(--border)] py-16 text-center bg-gradient-to-br from-[var(--accent)]/20 via-[var(--primary)] to-[var(--accent)]/10">
         <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl font-bold">
+          <h2 className="text-2xl font-bold text-[var(--primary)]">
             Ready to grow your organic traffic?
           </h2>
-          <p className="mt-4 text-white/80">
+          <p className="mt-4 text-[var(--muted-foreground)]">
             Get a free audit or book a 30-minute consultation. No obligation.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
               href="/audit"
-              className="inline-flex items-center justify-center rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[var(--accent-hover)]"
+              className="inline-flex items-center justify-center rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)]"
             >
               Get Free Audit
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center rounded-lg border-2 border-white px-5 py-2.5 text-sm font-medium text-white transition-colors hover:bg-white hover:text-[var(--primary)]"
+              className="inline-flex items-center justify-center rounded-lg border-2 border-[var(--primary)] px-5 py-2.5 text-sm font-medium text-[var(--primary)] transition-colors hover:bg-[var(--primary)] hover:text-[var(--primary-foreground)]"
             >
               Book Consultation
             </Link>

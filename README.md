@@ -20,6 +20,12 @@ npm run start
 
 ## Deploy to Netlify
 
+See **[DEPLOYMENT.md](DEPLOYMENT.md)** for full instructions on:
+
+- Where form submissions go and how to set up email notifications
+- How to link Calendly
+- How to switch the domain (crispinbt.co.uk) over
+
 1. Connect your Git repository to Netlify.
 2. Build command: `npm run build` (default from netlify.toml).
 3. Add environment variables in Netlify dashboard:

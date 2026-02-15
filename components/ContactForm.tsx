@@ -67,7 +67,7 @@ export function ContactForm() {
           id="name"
           type="text"
           {...register("name", { required: "Name is required" })}
-          className="mt-1 w-full rounded-lg border border-[var(--border)] px-4 py-2 focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+          className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--card-bg)] px-4 py-2 text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
         />
         {errors.name && (
           <p className="mt-1 text-sm text-red-600">{errors.name.message}</p>
@@ -82,7 +82,7 @@ export function ContactForm() {
           id="email"
           type="email"
           {...register("email", { required: "Email is required" })}
-          className="mt-1 w-full rounded-lg border border-[var(--border)] px-4 py-2 focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+          className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--card-bg)] px-4 py-2 text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
         />
         {errors.email && (
           <p className="mt-1 text-sm text-red-600">{errors.email.message}</p>
@@ -97,7 +97,7 @@ export function ContactForm() {
           id="phone"
           type="tel"
           {...register("phone")}
-          className="mt-1 w-full rounded-lg border border-[var(--border)] px-4 py-2 focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+          className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--card-bg)] px-4 py-2 text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
         />
       </div>
 
@@ -108,7 +108,7 @@ export function ContactForm() {
         <select
           id="service"
           {...register("service", { required: "Please select a service" })}
-          className="mt-1 w-full rounded-lg border border-[var(--border)] px-4 py-2 focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+          className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--card-bg)] px-4 py-2 text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
         >
           <option value="">Select...</option>
           <option value="technical-seo">Technical SEO</option>
@@ -132,7 +132,7 @@ export function ContactForm() {
           id="projectDetails"
           rows={4}
           {...register("projectDetails", { required: "Project details are required" })}
-          className="mt-1 w-full rounded-lg border border-[var(--border)] px-4 py-2 focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+          className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--card-bg)] px-4 py-2 text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
         />
         {errors.projectDetails && (
           <p className="mt-1 text-sm text-red-600">{errors.projectDetails.message}</p>
@@ -146,7 +146,7 @@ export function ContactForm() {
         <select
           id="budget"
           {...register("budget")}
-          className="mt-1 w-full rounded-lg border border-[var(--border)] px-4 py-2 focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
+          className="mt-1 w-full rounded-lg border border-[var(--border)] bg-[var(--card-bg)] px-4 py-2 text-[var(--foreground)] focus:border-[var(--accent)] focus:outline-none focus:ring-1 focus:ring-[var(--accent)]"
         >
           <option value="">Select...</option>
           <option value="under-2k">Under £2,000</option>
@@ -158,7 +158,7 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="w-full rounded-lg bg-[var(--accent)] px-5 py-2.5 font-medium text-white transition-colors hover:bg-[var(--accent-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2"
+        className="w-full rounded-lg bg-[var(--accent)] px-5 py-2.5 font-medium text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2"
       >
         Send message
       </button>

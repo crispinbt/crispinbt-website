@@ -29,7 +29,7 @@ export default function CaseStudiesPage() {
           <Link
             key={cs.slug}
             href={`/case-studies/${cs.slug}`}
-            className="block rounded-xl border border-[var(--border)] bg-white p-6 transition-shadow hover:shadow-md"
+            className="block rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)] p-6 transition-shadow hover:shadow-md"
           >
             <span className="text-xs font-medium text-[var(--accent)]">
               {cs.frontmatter.clientIndustry}

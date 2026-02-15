@@ -18,7 +18,7 @@ export function CTA({
   const primary =
     "bg-[var(--accent)] text-[var(--accent-foreground)] hover:bg-[var(--accent-hover)] focus:ring-[var(--accent)]";
   const secondary =
-    "border-2 border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-white focus:ring-[var(--primary)]";
+    "border-2 border-[var(--primary)] text-[var(--primary)] hover:bg-[var(--primary)] hover:text-[var(--primary-foreground)] focus:ring-[var(--primary)]";
 
   return (
     <Link
