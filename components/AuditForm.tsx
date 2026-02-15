@@ -36,7 +36,7 @@ export function AuditForm() {
       name: data.name,
     };
     try {
-      const response = await fetch("/", {
+      const response = await fetch("/__forms.html", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
         body: new URLSearchParams(params).toString(),
@@ -61,8 +61,6 @@ export function AuditForm() {
   return (
     <form
       name="free-audit"
-      method="POST"
-      data-netlify="true"
       onSubmit={handleSubmit(onSubmit)}
       className="space-y-6"
     >
