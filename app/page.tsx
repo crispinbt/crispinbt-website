@@ -178,7 +178,7 @@ export default function HomePage() {
               </div>
             ))}
           </div>
-          <div className="mt-8 flex flex-wrap justify-center gap-8 text-center text-sm text-[var(--muted-foreground)]">
+          <div className="mt-8 flex flex-wrap justify-center gap-x-12 gap-y-6 text-center text-sm text-[var(--muted-foreground)]">
             <div>
               <span className="block text-2xl font-bold text-[var(--accent)]">
                 10
@@ -187,15 +187,27 @@ export default function HomePage() {
             </div>
             <div>
               <span className="block text-2xl font-bold text-[var(--accent)]">
-                60+
+                100+
               </span>
               projects delivered
             </div>
             <div>
               <span className="block text-2xl font-bold text-[var(--accent)]">
-                2x
+                UK-wide
               </span>
-              average organic growth achieved
+              serving businesses across the country
+            </div>
+            <div>
+              <span className="block text-2xl font-bold text-[var(--accent)]">
+                Technical + content
+              </span>
+              full-spectrum SEO expertise
+            </div>
+            <div>
+              <span className="block text-2xl font-bold text-[var(--accent)]">
+                Agency partner
+              </span>
+              white-label for leading UK agencies
             </div>
           </div>
         </div>
