@@ -13,6 +13,7 @@ const navLinks = [
   { href: "/case-studies", label: "Case Studies" },
   { href: "/agency-partners", label: "Agency Partners" },
   { href: "/about", label: "About" },
+  { href: "/gallery", label: "Gallery" },
   { href: "/contact", label: "Contact" },
 ];
 

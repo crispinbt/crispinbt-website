@@ -23,6 +23,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/case-studies",
     "/agency-partners",
     "/about",
+    "/gallery",
+    "/gallery/ko-gym-charity-event",
     "/contact",
     "/audit",
   ].map((path) => ({
