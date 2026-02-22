@@ -61,29 +61,31 @@ export default function KOGymGalleryPage() {
           {photos.map((photo, index) => (
             <div
               key={photo.file}
-              className="group relative aspect-[4/3] overflow-hidden rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)]"
+              className="overflow-hidden rounded-xl border border-[var(--card-border)] bg-[var(--card-bg)]"
             >
-              <Image
-                src={`${IMAGE_DIR}/${photo.file}`}
-                alt={photo.alt}
-                fill
-                className="object-cover transition-transform duration-300 group-hover:scale-105"
-                sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              />
+              {/* Clickable image */}
+              <button
+                onClick={() => setLightbox(index)}
+                className="relative aspect-[4/3] w-full cursor-pointer overflow-hidden"
+              >
+                <Image
+                  src={`${IMAGE_DIR}/${photo.file}`}
+                  alt={photo.alt}
+                  fill
+                  className="object-cover transition-transform duration-300 hover:scale-105"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                />
+              </button>
 
-              {/* Hover overlay */}
-              <div className="absolute inset-0 flex items-end justify-between bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity duration-200 group-hover:opacity-100">
-                <button
-                  onClick={() => setLightbox(index)}
-                  className="m-3 rounded-lg bg-white/20 px-3 py-1.5 text-xs font-medium text-white backdrop-blur-sm transition-colors hover:bg-white/30"
-                >
-                  View
-                </button>
+              {/* Always-visible download button */}
+              <div className="flex items-center justify-between px-3 py-2">
+                <span className="text-xs text-[var(--muted-foreground)]">
+                  {photo.file}
+                </span>
                 <a
                   href={`${IMAGE_DIR}/${photo.file}`}
                   download={photo.file}
-                  className="m-3 inline-flex items-center gap-1.5 rounded-lg bg-[var(--accent)] px-3 py-1.5 text-xs font-medium text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)]"
-                  onClick={(e) => e.stopPropagation()}
+                  className="inline-flex items-center gap-1.5 rounded-lg bg-[var(--accent)] px-3 py-1.5 text-xs font-medium text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)]"
                 >
                   <svg
                     className="size-3.5"
