@@ -38,14 +38,24 @@ export function Footer() {
           <p className="text-sm text-white/60">
             &copy; {new Date().getFullYear()} Crispin Boden-Tebbutt
           </p>
-          <a
-            href="https://www.linkedin.com/in/crispinbt"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-white/80 hover:text-white"
-          >
-            LinkedIn
-          </a>
+          <div className="flex gap-6">
+            <a
+              href="https://www.linkedin.com/in/crispinbt"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-white/80 hover:text-white"
+            >
+              LinkedIn
+            </a>
+            <a
+              href="https://www.upwork.com/freelancers/~0184beec6ba4ae1adf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm text-white/80 hover:text-white"
+            >
+              Upwork
+            </a>
+          </div>
         </div>
       </div>
     </footer>

@@ -5,6 +5,9 @@ export const metadata: Metadata = {
   title: "Photo Gallery",
   description:
     "Photo galleries from events and community projects.",
+  // Personal photo galleries, deliberately kept out of the index: they are here
+  // for the people who attended, not to rank. `follow` so the links still flow.
+  robots: { index: false, follow: true },
 };
 
 const galleries = [

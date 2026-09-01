@@ -1,0 +1,69 @@
+---
+title: "Telling a Tracking Break from a Real Decline"
+slug: tracking-break-vs-decline
+clientIndustry: "B2B SaaS · AI voice software"
+challenge: "Analytics fell off a cliff overnight. It was two unrelated problems overlapping: a measurement break, and a genuine organic decline that had started weeks earlier."
+approach: "Use Search Console as a control against GA4 over identical windows, compute a capture rate, then find the mechanism in the deployed page source."
+results: "Arrivals down 19% against captured sessions down 59%. Cause traced to a consent banner blocking tags site-wide. The real decline quantified separately at 42%."
+timeline: "Diagnosis across two matched 14-day windows"
+metaDescription: "Analytics collapsed overnight on a B2B SaaS site. Search Console showed arrivals roughly flat: a consent banner had silently stopped almost all tag firing."
+---
+
+## The challenge
+
+Analytics fell off a cliff overnight. The obvious reading was that the site had
+lost most of its traffic. The obvious reading was half wrong, and acting on it
+would have sent the team chasing a rankings problem that was not the cause of
+what they were looking at.
+
+- **Two unrelated events, overlapping.** A measurement break on 29 to 30 June,
+  and a genuine organic decline that had started weeks earlier in late May.
+- **Conflating them would have misdirected the whole response.** Fixing tracking
+  does not recover rankings; chasing rankings does not restore reporting.
+- Three earlier drafts of the diagnosis reached the right conclusion by the wrong
+  mechanism, so the mechanism had to be proven, not assumed.
+
+## Approach
+
+**Use Search Console as the control.** GSC counts clicks at Google's end and is
+unaffected by anything the site does to its own tags. Comparing it against GA4
+over the identical window separates "fewer people arrived" from "we stopped
+counting the people who arrived".
+
+**Compute a capture rate.** GA4 sessions per Google click, split by new and
+returning. This is the single number that exposes a tag problem: if arrivals are
+steady and captured sessions collapse, the loss is in the measurement layer.
+
+**Find the mechanism in the page source, not in the dashboard.** A diff of the
+deployed HTML showed the consent-management script had been swapped from a
+disabled 45-byte stub to a fully armed 452,838-byte build in opt-in mode with
+auto-blocking on, moved into the head. It was blocking every tag site-wide before
+consent, which most visitors never gave.
+
+**Then quantify the real decline separately**, once the measurement noise was
+removed from the picture, and attribute it to specific pages.
+
+**Make every figure reproducible.** A verify script rebuilds each number from the
+raw exports, so the client can re-run the analysis rather than take it on trust.
+
+## Results
+
+- **-19% against -59%** — GSC clicks versus GA4 organic sessions over the same
+  window. Arrivals barely moved; captured sessions collapsed.
+- **Capture rate for new users fell from 0.89 to 0.14** GA4 sessions per Google
+  click. Returning users held at 0.73, because their consent cookie already
+  existed.
+- **The real, separate decline was -42%** — GSC clicks 11,368 to 6,647,
+  impressions down 53%, over two matched 14-day windows.
+- **82% of the click loss came from the homepage alone**, which moved from
+  position 12.2 to 16.7, focusing the recovery work on one template.
+
+## Key insight
+
+A consent banner is analytics infrastructure. This one was swapped from disabled
+to fully armed in a routine deploy and silently stopped almost all tag firing,
+while Search Console showed arrivals were roughly flat. On one matched weekday
+GSC recorded 610 clicks against 615 the week before, while GA4 new organic
+sessions went from 560 to 89. Without the control dataset, the team would have
+been recovering rankings that had not moved and ignoring the homepage decline
+that had.

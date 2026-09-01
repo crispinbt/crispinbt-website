@@ -6,7 +6,7 @@ import { CTA } from "@/components/CTA";
 export const metadata: Metadata = {
   title: "SEO Case Studies",
   description:
-    "SEO case studies: e-commerce recovery, B2B lead generation, topical authority, local SEO and international expansion. Data-driven results.",
+    "SEO case studies: migrations and redirect integrity, tracking breaks, Core Web Vitals, indexation diagnosis, content audits at scale and automation.",
 };
 
 export default function CaseStudiesPage() {
@@ -19,8 +19,9 @@ export default function CaseStudiesPage() {
           Case Studies
         </h1>
         <p className="mt-4 max-w-2xl text-[var(--muted-foreground)]">
-          Data-driven SEO results. Anonymised examples from e-commerce, B2B,
-          SaaS, local and international projects.
+          Real engagements, anonymised to sector and platform. The scale and
+          diagnostic figures below come from crawl outputs, API pulls and verify
+          scripts rather than from memory.
         </p>
       </header>
 

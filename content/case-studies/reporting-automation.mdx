@@ -1,0 +1,61 @@
+---
+title: "SEO Reporting Automation and Cloud Crawling"
+slug: reporting-automation
+clientIndustry: "SEO agency operations · Python and Google Cloud"
+challenge: "Agency reporting is the same retrieval and formatting work repeated per client per month. It scales linearly with the client count and crowds out the analysis."
+approach: "Pull GA4, Search Console and SE Ranking from their APIs, generate to house style automatically, move crawling to the cloud, and build QA into the pipeline."
+results: "Per-client reporting from hours to minutes across a full retainer book, with scheduled cloud crawls and retained daily snapshots."
+timeline: "Ongoing, running in production"
+metaDescription: "A Python pipeline pulling GA4, Search Console and SE Ranking directly from their APIs, plus a cloud-hosted Screaming Frog platform with daily snapshots."
+---
+
+## The challenge
+
+Agency SEO reporting is the same work repeated per client per month: log into
+four platforms, export, screenshot, paste, reformat to house style, check the
+numbers, send. It scales linearly with the client count and it is the first thing
+to slip when delivery gets busy.
+
+- **Hours per client per month** spent assembling reports that contained no
+  analysis, only retrieval and formatting.
+- **Transcription risk**: every manual copy between a dashboard and a deck is a
+  chance to move a decimal point, and errors surface in front of the client.
+- **Crawling was the same problem**: desktop Screaming Frog ties up a machine,
+  runs only when someone remembers, and produces snapshots nobody keeps.
+
+## Approach
+
+**Pull from APIs, not from dashboards.** GA4, Search Console and SE Ranking each
+queried directly, so the figures in the report are the figures in the platform
+with no human step between them.
+
+**Generate to house style automatically.** Branded, client-ready monthly reports
+produced from templates, so the output needs reviewing rather than rebuilding.
+
+**Move crawling to the cloud.** A hosted Screaming Frog instance on Google Cloud
+with a Flask monitoring dashboard, scheduled crawls and automated daily
+snapshots, serving multiple agency clients at once and keeping a history rather
+than a one-off export.
+
+**Build QA into the pipeline.** Automated checks on the generated reports, so a
+failed API pull surfaces as an error rather than as a silently empty chart. A
+zero that came from a failed fetch looks exactly like a zero that came from
+reality, and only one of them is true.
+
+## Results
+
+- **Per-client reporting time from hours to minutes**, from manual assembly to
+  review-and-send.
+- **Coverage across a whole retainer book**, not a single flagship account.
+- **Daily crawl snapshots**, scheduled and retained, so regressions are visible
+  as a trend rather than discovered by accident.
+- **Runs unattended**, including a rank-tracking export routine that removed a
+  recurring manual task entirely.
+
+## Key insight
+
+The valuable half of SEO reporting is the interpretation, and the manual half is
+the part that crowds it out. Automating retrieval and formatting does not just
+save time, it changes what the monthly report is for. The QA layer matters as
+much as the automation: a pipeline that silently reports zero when an API call
+fails is worse than the manual process it replaced.

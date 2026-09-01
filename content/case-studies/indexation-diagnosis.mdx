@@ -1,0 +1,64 @@
+---
+title: "Diagnosing 30,000 Not Indexed Pages"
+slug: indexation-diagnosis
+clientIndustry: "B2B SaaS · product-adoption software"
+challenge: "Search Console reported close to 30,000 pages as not indexed against a sitemap of only 777 URLs, and it had been escalated as an emergency."
+approach: "Enumerate every URL Google had surfaced over 16 months, classify the whole set by pattern, and test the real content pages independently as a control."
+results: "7,127 of 9,200 were pagination parameters already blocked and decaying on their own. Every inspected content page was indexed. No action needed."
+timeline: "16 months of Search Console data reviewed"
+metaDescription: "Close to 30,000 pages showing as not indexed turned out to be 7,127 pagination parameters already covered by a live Disallow rule. Nothing was wrong."
+---
+
+## The challenge
+
+The client opened Search Console, saw close to 30,000 pages reported as not
+indexed, and escalated it as an emergency. The number is genuinely alarming on a
+site with a few hundred real pages, and the instinct is to start fixing.
+
+- **Around 30,000 not-indexed URLs** against a sitemap of only 777.
+- **The obvious response was the wrong one.** Requesting indexing, rewriting
+  content or loosening robots rules would have cost weeks and achieved nothing.
+- **Nobody had established what those URLs actually were.** The count was being
+  treated as a diagnosis rather than as a symptom needing one.
+
+## Approach
+
+**Enumerate from the source of truth, not from the alarming number.** We pulled
+every distinct URL Google had surfaced across 16 months rather than reasoning
+from the Search Console summary tile.
+
+**Classify the whole set by URL pattern.** This is where the answer was: the
+overwhelming majority shared a query-string signature.
+
+**Test the real pages independently.** Every inspected content page came back
+"Submitted and indexed", which is the control that proves the problem is not
+where the client feared it was.
+
+**Track the decay curve rather than the snapshot.** Monthly impressions for the
+suspect class were followed over the full period to show the trend was already
+resolving itself under an existing rule.
+
+**Say so plainly.** The deliverable's conclusion was that no action was needed,
+with the evidence laid out so the client could verify it rather than take
+reassurance on trust.
+
+## Results
+
+- **7,127 of 9,200 surfaced URLs (77%)** were pagination parameter combinations,
+  not real pages, already covered by a live `Disallow` rule.
+- **Monthly impressions for that class fell from 6,339 to 24** over 16 months,
+  decaying on their own as Google dropped them. 24 clicks in total across the
+  entire period.
+- **100% of inspected content pages** returned "Submitted and indexed". The real
+  site was fine.
+- **A benign verdict delivered with the evidence attached**, and an unrelated
+  genuine issue flagged separately for the client to decide on.
+
+## Key insight
+
+A frightening number in Search Console is a question, not a finding. Classifying
+the URLs before acting turned a 30,000-page emergency into a known,
+self-resolving artefact of one pagination rule, and saved the client from a
+remediation programme aimed at pages that were never meant to be indexed. The
+useful deliverable was the evidence that nothing was wrong, plus the one genuine
+issue that would otherwise have stayed buried under the noise.

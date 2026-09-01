@@ -3,7 +3,13 @@ const PERSON_ID = `${SITE}/#person`;
 const BUSINESS_ID = `${SITE}/#business`;
 const WEBSITE_ID = `${SITE}/#website`;
 
-const SAME_AS = ["https://www.linkedin.com/in/crispinbt"];
+// Deliberately no Review / AggregateRating markup for the testimonials: Google
+// does not allow self-serving reviews about your own business to be marked up
+// for rich results. sameAs links to the profile where they are verifiable.
+const SAME_AS = [
+  "https://www.linkedin.com/in/crispinbt",
+  "https://www.upwork.com/freelancers/~0184beec6ba4ae1adf",
+];
 
 function JsonLdScript({ schema }: { schema: object }) {
   return (

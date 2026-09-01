@@ -1,0 +1,66 @@
+---
+title: "Core Web Vitals on a WordPress Build"
+slug: core-web-vitals-wordpress
+clientIndustry: "Local service business · fitness and personal training"
+challenge: "A custom WordPress theme failing Core Web Vitals badly, with a 7.9 second LCP, on a four-hour budget and a live site that could not be rebuilt."
+approach: "Four cheap, individually reversible fixes, then a flag-gated live experiment to prove which element was actually the LCP rather than assuming."
+results: "LCP 7.9s to 3.4s, blocking time 4,790ms to ~200ms, CLS 0.162 to 0.019, measured at handover. The fifth issue was specified as a developer task."
+timeline: "4-hour fixed budget"
+metaDescription: "A WordPress site with a 7.9 second LCP. A flag-gated live test exonerated the obvious hero image and pointed at 156KB of render-blocking JavaScript."
+---
+
+## The challenge
+
+A WordPress site with a custom theme failing Core Web Vitals badly enough to be a
+ranking and conversion liability, with a small fixed budget and a live site that
+could not be taken down or rebuilt.
+
+- **LCP of 7.9 seconds** on the primary landing page, well beyond the 2.5s
+  threshold.
+- **Total Blocking Time of 4,790ms**, meaning the page was visually present long
+  before it was usable.
+- **CLS of 0.162**, above the 0.1 threshold, from an unsized image.
+- The homepage looked like the same problem but was not, and treating it as one
+  would have burned the budget on the wrong page.
+
+## Approach
+
+**Fix what is cheap and reversible first.** Deferring render-blocking JavaScript,
+preloading the three above-the-fold font files, setting an explicit aspect ratio
+on the offending image, and removing jQuery Migrate. Four changes, each isolated
+in a snippet manager so any one could be reverted independently.
+
+**Prove which element is actually the LCP rather than assuming.** The homepage
+hero image was the obvious suspect. We tested it with a flag-gated experiment: a
+query parameter that served an eager `<img>` hero, run through PageSpeed against
+the flagged URL only, so the live site was never altered for real visitors. The
+LCP did not move. The hero was exonerated.
+
+**Follow the evidence to the real constraint.** With the image ruled out, LCP
+tracked time-to-interactive, which pointed at roughly 156KB of render-blocking
+main-thread JavaScript from three animation libraries.
+
+**Know what is not a snippet fix.** Decoupling above-the-fold paint from those
+libraries meant lazy-initialising the slider, which is development work, not
+configuration. That went to the client's developers as a written brief rather
+than being bodged.
+
+## Results
+
+Measured on PageSpeed Insights, mobile, on the primary landing page at handover.
+
+- **Largest Contentful Paint: 7.9s to 3.4s.**
+- **Total Blocking Time: 4,790ms to roughly 200ms**, from unusable-on-arrival to
+  effectively interactive.
+- **Cumulative Layout Shift: 0.162 to 0.019**, from failing to comfortably inside
+  the threshold.
+- **4 of 5 issues resolved inside the 4-hour budget.** The fifth was correctly
+  identified as a development task and specified for the client's dev team.
+
+## Key insight
+
+The obvious LCP candidate is often wrong, and guessing costs more than testing. A
+flag-gated live experiment ruled out the hero image in one PageSpeed run and
+redirected the remaining budget from a cosmetic image swap to the render-blocking
+JavaScript that was actually holding the paint. It also produced a specific,
+costed developer brief instead of a vague "improve performance" recommendation.

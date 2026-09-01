@@ -1,0 +1,68 @@
+---
+title: "Domain Migration and Redirect Integrity"
+slug: migration-redirect-integrity
+clientIndustry: "B2B SaaS · cloud cost and performance engineering"
+challenge: "A 300-row redirect map was ready to ship days before a combined rebrand, domain move and CMS replatform. Only 22 of its 300 targets actually resolved."
+approach: "Crawl for an authoritative inventory, probe every destination against the live build, trace the failure pattern, then close the gap and re-verify."
+results: "Shipped at 493 rows with 478 verified single-hop 301s. No chains, no www hops, no broken targets."
+timeline: "Pre-launch QA against a fixed cutover date"
+metaDescription: "A 300-row redirect map where only 22 targets resolved. Probing every destination against the live build turned it into 478 verified single-hop 301s."
+---
+
+## The challenge
+
+A rebrand, a domain change and a CMS replatform landing on the same fixed launch
+date, with the information architecture consolidated at the same time. The build
+team had produced a 300-row redirect map. We were brought in to QA it, read-only,
+days before cutover.
+
+- **278 of 300 map targets returned 404.** Only 22 resolved. The map had been
+  written against a content structure that did not exist on the new site.
+- **165 live URLs had no redirect mapped at all**, including an entire `/en-gb/`
+  language tree and three core service pages.
+- **283 targets pointed at the www host**, which 301s to non-www, adding a second
+  hop to the majority of the map.
+- The new domain was still serving `robots.txt` with `Disallow: /`.
+
+## Approach
+
+**Crawl for an authoritative inventory.** Rather than trusting the map's source
+column, we crawled the live site to establish what actually existed: 397 URLs,
+395 returning 200, zero noindex. 137 map sources were not in the sitemap at all.
+
+**Probe every target against the live new site.** Each destination was requested
+and its real status recorded. This is what surfaced the 404s, and it is the step
+that is routinely skipped because the map looks right in a spreadsheet.
+
+**Find the pattern behind the failures.** The 404s were not random. 150 rows
+pointed at a flat `/insights/<slug>` path while the migrated articles actually
+lived at `/insights/blogs/<slug>`. The content had migrated; the map had not. A
+further 157 rows carried a trailing slash that redirected onward, creating
+avoidable chains.
+
+**Close the gap, then re-verify everything.** We built the 165 missing rows and
+verified each new target before committing it. When the client edited the sheet
+directly, we reconciled their 57 value changes and re-probed the full set rather
+than trusting the earlier pass.
+
+**Escalate what is a business decision, not an SEO one.** Thirteen URLs had no
+correct destination. Those went back to the client as explicit decisions rather
+than being quietly pointed at the homepage.
+
+## Results
+
+- **300 to 493 rows in the final map** — the original 300 reconciled and
+  corrected, plus 165 previously unmapped live URLs.
+- **478 verified single-hop 301s** — every committed redirect re-probed live: all
+  200, no chains, no www targets, no 404s.
+- **Zero redirect chains, www hops or broken targets** in the shipped map, down
+  from 278 broken targets and 283 www hops.
+- **13 decisions escalated** to the client rather than guessed, plus 2 deliberate
+  410s for retired content.
+
+## Key insight
+
+A redirect map is a claim about a website that does not exist yet. Until every
+target has been requested against the live build, it is untested. Probing the
+destinations, not reviewing the spreadsheet, is what turned a map that would have
+404'd 93% of its targets into one that shipped clean.

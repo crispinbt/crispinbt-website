@@ -119,16 +119,31 @@ const services = [
   },
 ];
 
-// Real, attributable testimonials only. Three placeholder entries were live on
-// the homepage until 1 Sep 2026 - published social proof signed "Placeholder
-// Client" is worse than none. Add real ones here (quote, name, company,
-// result) and the section renders itself again.
-const testimonials: {
-  quote: string;
-  name: string;
-  company: string;
-  result: string;
-}[] = [];
+const UPWORK_PROFILE = "https://www.upwork.com/freelancers/~0184beec6ba4ae1adf";
+
+// Verbatim from the verified testimonials on the Upwork profile (all Feb 2026).
+// Do not edit the wording: these are other people's words, and each is publicly
+// checkable against the profile linked beneath it.
+const testimonials = [
+  {
+    quote:
+      "We have been working with Crispin to improve our website user experience and SEO, increasing our inbound leads. We held introductory calls with various freelance SEO experts, but Crispin demonstrated the greatest knowledge by a long distance. He has since been easy to work with and very flexible. We've seen some great results since we started working with Crispin, with a noticeable increase in our inbound leads coming through the website as a result of the work and overall strategy developed.",
+    name: "Jamie W.",
+    company: "Senior Account Manager",
+  },
+  {
+    quote:
+      "We've worked with Crispin on a number of technical SEO projects. He's an extremely skilled practitioner as well as being an excellent communicator. We would highly recommend him to anyone looking for top end SEO consultancy.",
+    name: "James G.",
+    company: "Director of Digital & Strategy",
+  },
+  {
+    quote:
+      "I've worked with Crispin on a number of technical SEO projects and he's solid. He's easy to work with, communicates well, and just gets on with it. Genuine specialist, no nonsense. Would happily recommend him to anyone needing strong technical SEO support.",
+    name: "Thomas J.",
+    company: "Freelance SEO Consultant",
+  },
+];
 
 export default function HomePage() {
   return (
@@ -241,6 +256,18 @@ export default function HomePage() {
           <h2 className="text-2xl font-bold text-[var(--primary)]">
             What clients say
           </h2>
+          <p className="mt-2 text-[var(--muted-foreground)]">
+            Verified endorsements from past clients. Each one is checkable on my{" "}
+            <a
+              href={UPWORK_PROFILE}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[var(--accent)] hover:underline"
+            >
+              Upwork profile
+            </a>
+            .
+          </p>
           <div className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
             {testimonials.map((t, i) => (
               <Testimonial
@@ -248,7 +275,8 @@ export default function HomePage() {
                 quote={t.quote}
                 name={t.name}
                 company={t.company}
-                result={t.result}
+                sourceUrl={UPWORK_PROFILE}
+                sourceLabel="Verified on Upwork"
               />
             ))}
           </div>
