@@ -4,7 +4,7 @@ slug: core-web-vitals-wordpress
 clientIndustry: "Local service business · fitness and personal training"
 challenge: "A custom WordPress theme failing Core Web Vitals badly, with a 7.9 second LCP, on a four-hour budget and a live site that could not be rebuilt."
 approach: "Four cheap, individually reversible fixes, then a flag-gated live experiment to prove which element was actually the LCP rather than assuming."
-results: "LCP 7.9s to 3.4s, blocking time 4,790ms to ~200ms, CLS 0.162 to 0.019, measured at handover. The fifth issue was specified as a developer task."
+results: "The obvious LCP culprit ruled out by live experiment, the real constraint identified as 156KB of render-blocking JavaScript, and a specific developer brief in place of a vague performance complaint."
 timeline: "4-hour fixed budget"
 metaDescription: "A WordPress site with a 7.9 second LCP. A flag-gated live test exonerated the obvious hero image and pointed at 156KB of render-blocking JavaScript."
 ---
@@ -45,17 +45,18 @@ libraries meant lazy-initialising the slider, which is development work, not
 configuration. That went to the client's developers as a written brief rather
 than being bodged.
 
-## Results
+## What came out of it
 
-Measured on PageSpeed Insights, mobile, on the primary landing page at handover.
-
-- **Largest Contentful Paint: 7.9s to 3.4s.**
-- **Total Blocking Time: 4,790ms to roughly 200ms**, from unusable-on-arrival to
-  effectively interactive.
-- **Cumulative Layout Shift: 0.162 to 0.019**, from failing to comfortably inside
-  the threshold.
-- **4 of 5 issues resolved inside the 4-hour budget.** The fifth was correctly
-  identified as a development task and specified for the client's dev team.
+- **The obvious suspect was eliminated, cheaply.** One PageSpeed run against a
+  flag-gated URL was enough to exonerate the hero image, before any budget went
+  into swapping it.
+- **The real constraint was identified**: roughly 156KB of render-blocking
+  main-thread JavaScript from three animation libraries, holding the paint.
+- **Four reversible fixes shipped inside the four-hour budget**, each isolated in
+  a snippet manager so any one could be rolled back independently.
+- **The fifth issue was correctly scoped as development work, not configuration**,
+  and handed over as a written brief the client's developers could implement
+  without further input.
 
 ## Key insight
 
