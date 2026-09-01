@@ -1,4 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
-  <rect width="32" height="32" rx="6" fill="#0f172a"/>
-  <text x="16" y="22" text-anchor="middle" fill="#0d9488" font-size="16" font-family="sans-serif" font-weight="bold">C</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" fill="none" role="img" aria-label="Crispin Boden-Tebbutt">
+  <title>Crispin Boden-Tebbutt</title>
+  <rect width="48" height="48" rx="10" fill="#0f172a"/>
+  <path d="M38.745 13.676 A18 18 0 1 0 38.745 34.324" fill="none" stroke="#f1f5f9" stroke-width="6.5" stroke-linecap="round"/>
+  <circle cx="38.745" cy="34.324" r="7" fill="#14b8a6"/>
 </svg>

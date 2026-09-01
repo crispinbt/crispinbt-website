@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { LogoMark } from "./Logo";
 
 const footerLinks = [
   { href: "/services", label: "Services" },
@@ -16,11 +17,14 @@ export function Footer() {
     <footer className="border-t border-[var(--border)] bg-[var(--footer-bg)] text-white">
       <div className="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="flex flex-col gap-8 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="font-semibold">Crispin Boden-Tebbutt</p>
-            <p className="mt-1 text-sm text-white/80">
-              Based in Swansea, South Wales
-            </p>
+          <div className="flex items-start gap-3">
+            <LogoMark className="mt-0.5 size-7 shrink-0" nodeFill="#14b8a6" />
+            <div>
+              <p className="font-semibold">Crispin Boden-Tebbutt</p>
+              <p className="mt-1 text-sm text-white/80">
+                Based in Swansea, South Wales
+              </p>
+            </div>
           </div>
           <nav className="flex flex-wrap gap-6">
             {footerLinks.map((link) => (

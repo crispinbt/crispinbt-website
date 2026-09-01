@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { CTA } from "./CTA";
+import { LogoMark } from "./Logo";
 import { ThemeToggle } from "./ThemeToggle";
 
 const navLinks = [
@@ -25,9 +26,10 @@ export function Navigation() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="text-lg font-semibold text-[var(--primary)] hover:text-[var(--primary-light)]"
+          className="flex items-center gap-2.5 text-lg font-semibold text-[var(--primary)] hover:text-[var(--primary-light)]"
         >
-          Crispin Boden-Tebbutt
+          <LogoMark className="size-8 shrink-0" />
+          <span>Crispin Boden-Tebbutt</span>
         </Link>
 
         {/* Desktop nav */}
