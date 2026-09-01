@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ServiceLayout } from "@/components/ServiceLayout";
 
 export const metadata: Metadata = {
-  title: "Local SEO | Swansea SEO Consultant",
+  title: "Local SEO | Swansea & UK",
   description:
     "Google Business Profile optimisation, location pages and local link building. Win local pack rankings in Swansea and across the UK.",
 };
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function LocalSEOPage() {
   return (
     <ServiceLayout
+      path="/services/local-seo"
       title="Local SEO"
       subtitle="Google Business Profile, location pages and local link building. Win local pack and map rankings."
     >

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "Agency Partners | White-Label SEO - Crispin Boden-Tebbutt",
+  title: "White-Label SEO for Agencies",
   description:
     "White-label SEO delivery for UK branding and digital agencies. Technical audits, content strategy and client reporting. Discretion guaranteed.",
 };

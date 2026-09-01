@@ -4,7 +4,7 @@ import { getAllCaseStudies } from "@/lib/case-studies";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "Case Studies | Swansea SEO Consultant",
+  title: "SEO Case Studies",
   description:
     "SEO case studies: e-commerce recovery, B2B lead generation, topical authority, local SEO and international expansion. Data-driven results.",
 };

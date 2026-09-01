@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "Packages & Pricing | Swansea SEO Consultant",
+  title: "SEO Packages & Pricing",
   description:
     "SEO packages from £1,200 audit to ongoing retainer. Foundation Audit, SEO Strategy and day-rate options. Transparent pricing for UK businesses.",
 };

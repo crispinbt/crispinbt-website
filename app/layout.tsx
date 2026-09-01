@@ -4,11 +4,7 @@ import { Manrope, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
-import {
-  OrganizationSchema,
-  PersonSchema,
-  LocalBusinessSchema,
-} from "@/components/JsonLd";
+import { SiteSchema } from "@/components/JsonLd";
 import { ThemeScript } from "@/components/ThemeScript";
 
 const manrope = Manrope({
@@ -24,7 +20,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "SEO Consultant Swansea | UK Freelance SEO Expert - Crispin Boden-Tebbutt",
+    default: "SEO Consultant Swansea & UK | Crispin Boden-Tebbutt",
     template: "%s | Crispin Boden-Tebbutt",
   },
   description:
@@ -33,12 +29,18 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "en_GB",
-    url: "https://crispinbt.co.uk",
+    siteName: "Crispin Boden-Tebbutt",
+    // Relative URL: Next resolves it per-route against metadataBase, so each
+    // page gets its own og:url instead of inheriting the homepage's.
+    url: "./",
   },
   twitter: {
     card: "summary_large_image",
   },
-  alternates: { canonical: "https://crispinbt.co.uk" },
+  // Relative canonical: resolved per-route against metadataBase. An absolute
+  // URL here is inherited by every child page and points them all at the
+  // homepage.
+  alternates: { canonical: "./" },
 };
 
 export const viewport: Viewport = {
@@ -56,9 +58,7 @@ export default function RootLayout({
       <body className="flex min-h-screen flex-col antialiased">
         <ThemeScript />
         <MotionConfig reducedMotion="user">
-          <OrganizationSchema />
-          <PersonSchema />
-          <LocalBusinessSchema />
+          <SiteSchema />
           <Navigation />
           <main className="flex-1">{children}</main>
           <Footer />

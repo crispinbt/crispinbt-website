@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ServiceLayout } from "@/components/ServiceLayout";
 
 export const metadata: Metadata = {
-  title: "SEO Automation | Swansea SEO Consultant",
+  title: "SEO Automation & Tooling",
   description:
     "Custom SEO tooling, programmatic SEO and process efficiency. Scale your SEO efforts without scaling headcount.",
 };
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function SEOAutomationPage() {
   return (
     <ServiceLayout
+      path="/services/seo-automation"
       title="SEO Automation"
       subtitle="Custom tooling, programmatic SEO and process efficiency. Scale without scaling headcount."
     >

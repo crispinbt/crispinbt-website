@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Gallery | Crispin Boden-Tebbutt",
+  title: "Photo Gallery",
   description:
     "Photo galleries from events and community projects.",
 };

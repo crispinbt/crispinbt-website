@@ -117,7 +117,7 @@ const services = [
 ];
 
 export const metadata: Metadata = {
-  title: "SEO Services | Swansea SEO Consultant",
+  title: "SEO Services | Swansea & UK",
   description:
     "Technical SEO, content strategy, local SEO, SEO automation and custom projects. Based in Swansea, serving UK businesses.",
 };

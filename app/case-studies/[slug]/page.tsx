@@ -7,6 +7,7 @@ import {
   getCaseStudySlugs,
 } from "@/lib/case-studies";
 import { CTA } from "@/components/CTA";
+import { BreadcrumbSchema } from "@/components/JsonLd";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -22,8 +23,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const cs = getCaseStudyBySlug(slug);
   if (!cs) return {};
   return {
-    title: `${cs.frontmatter.title} | Case Study`,
-    description: `${cs.frontmatter.challenge} ${cs.frontmatter.results}`,
+    // `absolute` so the long case-study titles do not also pick up the
+    // sitewide " | Crispin Boden-Tebbutt" template and overflow the SERP.
+    title: { absolute: `${cs.frontmatter.title} | Case Study` },
+    description:
+      cs.frontmatter.metaDescription ??
+      `${cs.frontmatter.challenge} ${cs.frontmatter.results}`,
   };
 }
 
@@ -39,6 +44,12 @@ export default async function CaseStudyPage({ params }: Props) {
 
   return (
     <article className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      <BreadcrumbSchema
+        trail={[
+          { name: "Case Studies", path: "/case-studies" },
+          { name: cs.frontmatter.title, path: `/case-studies/${slug}` },
+        ]}
+      />
       <nav className="mb-8 text-sm">
         <Link
           href="/case-studies"

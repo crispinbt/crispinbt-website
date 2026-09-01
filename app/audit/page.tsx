@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { AuditForm } from "@/components/AuditForm";
 
 export const metadata: Metadata = {
-  title: "Free SEO Audit | Swansea SEO Consultant",
+  title: "Free SEO Audit",
   description:
     "Request a free SEO audit. Share your website and challenges for a data-driven assessment. No obligation.",
 };

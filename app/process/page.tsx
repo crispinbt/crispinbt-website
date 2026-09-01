@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CTA } from "@/components/CTA";
 
 export const metadata: Metadata = {
-  title: "SEO Process & Methodology | Crispin Boden-Tebbutt",
+  title: "SEO Process & Methodology",
   description:
     "How I approach SEO: Discovery & Audit, Strategy, Implementation, Authority Building and Measurement. Data-driven methodology for UK businesses.",
 };

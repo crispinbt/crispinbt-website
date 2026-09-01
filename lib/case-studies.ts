@@ -12,6 +12,7 @@ export type CaseStudyFrontmatter = {
   approach: string;
   results: string;
   timeline: string;
+  metaDescription?: string;
   image?: string;
 };
 

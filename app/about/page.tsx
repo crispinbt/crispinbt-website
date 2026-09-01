@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 export const metadata: Metadata = {
-  title: "About | Crispin Boden-Tebbutt - SEO Consultant",
+  title: "About | SEO Consultant, Swansea",
   description:
     "SEO consultant with nearly a decade of experience. BBC and ITV journalism background. Based in Swansea, serving UK businesses. Data-driven, technical SEO focus.",
 };

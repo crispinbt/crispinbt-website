@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ServiceLayout } from "@/components/ServiceLayout";
 
 export const metadata: Metadata = {
-  title: "Technical SEO | Swansea SEO Consultant",
+  title: "Technical SEO Audits",
   description:
     "Technical SEO audits, site health checks and Core Web Vitals optimisation. Fix crawlability, indexing and technical foundations.",
 };
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function TechnicalSEOPage() {
   return (
     <ServiceLayout
+      path="/services/technical-seo"
       title="Technical SEO"
       subtitle="Site audits, crawlability and Core Web Vitals. Fix the technical foundations before scaling."
     >

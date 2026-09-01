@@ -1,14 +1,24 @@
 import { CTA } from "./CTA";
+import { BreadcrumbSchema, ServiceSchema } from "./JsonLd";
 
 type ServiceLayoutProps = {
   title: string;
   subtitle?: string;
+  /** Route path, e.g. "/services/technical-seo". Drives schema URLs. */
+  path: string;
   children: React.ReactNode;
 };
 
-export function ServiceLayout({ title, subtitle, children }: ServiceLayoutProps) {
+export function ServiceLayout({ title, subtitle, path, children }: ServiceLayoutProps) {
   return (
     <article className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      <ServiceSchema name={title} description={subtitle ?? title} path={path} />
+      <BreadcrumbSchema
+        trail={[
+          { name: "Services", path: "/services" },
+          { name: title, path },
+        ]}
+      />
       <header>
         <h1 className="text-3xl font-bold text-[var(--primary)] sm:text-4xl">
           {title}

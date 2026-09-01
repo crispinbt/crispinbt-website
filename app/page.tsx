@@ -119,29 +119,16 @@ const services = [
   },
 ];
 
-const testimonials = [
-  {
-    quote:
-      "Crispin's technical SEO audit uncovered issues we had missed for years. Within three months we saw a 40% increase in organic traffic.",
-    name: "Placeholder Client",
-    company: "Technology Company",
-    result: "+40% organic traffic",
-  },
-  {
-    quote:
-      "The content strategy he developed gave us a clear roadmap. We now rank for terms we never thought possible.",
-    name: "Placeholder Client",
-    company: "B2B Services",
-    result: "Top 10 for target keywords",
-  },
-  {
-    quote:
-      "Professional, responsive and delivers. Exactly what you want from a freelance consultant.",
-    name: "Placeholder Client",
-    company: "Agency Partner",
-    result: "Ongoing white-label partnership",
-  },
-];
+// Real, attributable testimonials only. Three placeholder entries were live on
+// the homepage until 1 Sep 2026 - published social proof signed "Placeholder
+// Client" is worse than none. Add real ones here (quote, name, company,
+// result) and the section renders itself again.
+const testimonials: {
+  quote: string;
+  name: string;
+  company: string;
+  result: string;
+}[] = [];
 
 export default function HomePage() {
   return (
@@ -247,6 +234,7 @@ export default function HomePage() {
       </section>
       </AnimateSection>
 
+      {testimonials.length > 0 && (
       <AnimateSection delay={0.1}>
       <section className="relative border-t border-[var(--border)] py-16 bg-mesh">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -267,6 +255,7 @@ export default function HomePage() {
         </div>
       </section>
       </AnimateSection>
+      )}
 
       {/* Local element */}
       <section className="border-t border-[var(--border)] py-12">

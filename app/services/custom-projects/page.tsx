@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ServiceLayout } from "@/components/ServiceLayout";
 
 export const metadata: Metadata = {
-  title: "Custom Projects | Swansea SEO Consultant",
+  title: "Custom SEO Projects & Builds",
   description:
     "Website builds, bespoke tools and SEO consultancy. Tailored solutions for UK businesses. Day rates £300–400.",
 };
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function CustomProjectsPage() {
   return (
     <ServiceLayout
+      path="/services/custom-projects"
       title="Custom & Bespoke Work"
       subtitle="Website builds, bespoke tools and consultancy. When you need something tailored."
     >

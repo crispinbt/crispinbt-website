@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { ServiceLayout } from "@/components/ServiceLayout";
 
 export const metadata: Metadata = {
-  title: "Content Strategy | Swansea SEO Consultant",
+  title: "Content Strategy for SEO",
   description:
     "Hub-and-spoke content architecture, E-E-A-T signals and topical authority. Data-driven content strategy for UK businesses.",
 };
@@ -10,6 +10,7 @@ export const metadata: Metadata = {
 export default function ContentStrategyPage() {
   return (
     <ServiceLayout
+      path="/services/content-strategy"
       title="Content Strategy"
       subtitle="Hub-and-spoke architecture, E-E-A-T and topical authority. Content that ranks and converts."
     >
