@@ -3,47 +3,46 @@ import Image from "next/image";
 import { ServiceLayout } from "@/components/ServiceLayout";
 
 /**
- * Worked examples, drawn for a real brief (a Swansea amateur football club).
- * Names, scores and opponents are invented; the sponsor names are the club's
- * own, which are public on their social accounts.
+ * Brand-neutral demonstration templates, not delivered client work. Every one
+ * carries visible placeholders (logo slot, "yourbusiness.co.uk", "First name
+ * Surname") so nothing here can be read as a real customer's post.
  */
 const examples = [
   {
-    src: "/mockups/colts/01-matchday.jpg",
-    title: "Fixture announcement",
-    note: "Goes out midweek for every team from one template, with the opposition tagged.",
+    src: "/mockups/examples/01-announcement.jpg",
+    title: "Announcement",
+    note: "Opening hours, a new location, a change of service. The post people screenshot and act on.",
   },
   {
-    src: "/mockups/colts/02-lineup.jpg",
-    title: "Matchday line-up",
-    note: "The post players screenshot and send to their family. A named sponsor on it every week.",
+    src: "/mockups/examples/02-offer.jpg",
+    title: "Offer",
+    note: "One number, one condition, one deadline. Vague offers get scrolled past.",
   },
   {
-    src: "/mockups/colts/03-fulltime.jpg",
-    title: "Full time result",
-    note: "Out within the hour of the whistle, when it does two or three times the numbers.",
+    src: "/mockups/examples/03-team.jpg",
+    title: "Meet the team",
+    note: "A face and a name. Consistently the best performing post type for a small business.",
   },
   {
-    src: "/mockups/colts/04-potm.jpg",
-    title: "Player of the match",
-    note: "Chosen by a sponsor, which gives that business a reason to share it to its own customers.",
+    src: "/mockups/examples/04-review.jpg",
+    title: "Customer review",
+    note: "A real review, quoted verbatim with permission, instead of a claim about yourself.",
   },
   {
-    src: "/mockups/colts/05-sponsor.jpg",
-    title: "Sponsor feature",
-    note: "A monthly piece that reads as a story about a local business, not an advert.",
+    src: "/mockups/examples/05-event.jpg",
+    title: "Event",
+    note: "Date, time, place and cost above the fold, so nobody has to message you to ask.",
   },
   {
-    src: "/mockups/colts/06-report.jpg",
-    title: "Match report card",
-    note: "The post that sends people off the feed and onto something the club owns.",
+    src: "/mockups/examples/06-article.jpg",
+    title: "Article teaser",
+    note: "The post that sends people off the feed and onto something you own and can measure.",
   },
 ];
-
 export const metadata: Metadata = {
   title: "Social Media Management | Swansea & UK",
   description:
-    "Social media management for local businesses, sports clubs and community organisations. Matchday and product graphics, written content, scheduling and sponsor-facing reporting. Based in Swansea.",
+    "Social media management for local businesses, clubs and community organisations. Branded post templates, written content, scheduling and reporting you can show a sponsor or a board. Based in Swansea.",
 };
 
 export default function SocialMediaManagementPage() {
@@ -125,19 +124,20 @@ export default function SocialMediaManagementPage() {
         <li>Optional: a simple website or news page so the content is indexed</li>
       </ul>
 
-      <h2>Example work</h2>
+      <h2>Example templates</h2>
       <p>
-        A full matchday set, drawn for a Swansea amateur football club. Every
-        one is a template built once and refilled each week in the club&apos;s
-        own colours, with the crest and sponsor strip fixed in place. Names,
-        scores and opponents are invented to show the format.
+        A set covering the post types most organisations need month to month.
+        These are demonstrations rather than a client&apos;s live posts, so
+        they carry visible placeholders where your logo, photos and details go.
+        Yours would be built in your own colours and typefaces, then refilled
+        each time rather than redesigned.
       </p>
       <div className="not-prose mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {examples.map((ex) => (
           <figure key={ex.src} className="flex flex-col gap-3">
             <Image
               src={ex.src}
-              alt={`${ex.title} social media graphic template for a football club`}
+              alt={`${ex.title} social media post template`}
               width={1080}
               height={1080}
               className="w-full rounded-md border border-[var(--border)]"
