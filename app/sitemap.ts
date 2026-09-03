@@ -40,6 +40,7 @@ const staticRoutes: { path: string; source: string; priority: number }[] = [
   { path: "/services/content-strategy", source: "app/services/content-strategy/page.tsx", priority: 0.8 },
   { path: "/services/local-seo", source: "app/services/local-seo/page.tsx", priority: 0.8 },
   { path: "/services/seo-automation", source: "app/services/seo-automation/page.tsx", priority: 0.8 },
+  { path: "/services/social-media-management", source: "app/services/social-media-management/page.tsx", priority: 0.8 },
   { path: "/services/custom-projects", source: "app/services/custom-projects/page.tsx", priority: 0.8 },
   { path: "/packages", source: "app/packages/page.tsx", priority: 0.9 },
   { path: "/process", source: "app/process/page.tsx", priority: 0.7 },

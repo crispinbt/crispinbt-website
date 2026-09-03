@@ -94,6 +94,27 @@ const services = [
     ),
   },
   {
+    title: "Social Media Management",
+    description:
+      "Branded templates, content calendars, scheduling and sponsor-facing reporting. For clubs and businesses that need the channel to earn.",
+    href: "/services/social-media-management",
+    icon: (
+      <svg
+        className="size-6"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+      >
+        <path
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth={2}
+          d="M7 8h10M7 12h6m-6 8l-3-3V5a2 2 0 012-2h14a2 2 0 012 2v10a2 2 0 01-2 2H10l-3 3z"
+        />
+      </svg>
+    ),
+  },
+  {
     title: "Custom Projects",
     description:
       "Website builds, bespoke tools and consultancy. When you need something tailored.",
@@ -119,7 +140,7 @@ const services = [
 export const metadata: Metadata = {
   title: "SEO Services | Swansea & UK",
   description:
-    "Technical SEO, content strategy, local SEO, SEO automation and custom projects. Based in Swansea, serving UK businesses.",
+    "Technical SEO, content strategy, local SEO, SEO automation, social media management and custom projects. Based in Swansea, serving UK businesses.",
 };
 
 export default function ServicesPage() {
@@ -130,8 +151,9 @@ export default function ServicesPage() {
           SEO Services
         </h1>
         <p className="mt-4 max-w-2xl text-[var(--muted-foreground)]">
-          Technical audits, content strategy, local SEO and custom projects.
-          Based in Swansea, serving businesses across the UK.
+          Technical audits, content strategy, local SEO, social media
+          management and custom projects. Based in Swansea, serving
+          businesses across the UK.
         </p>
       </header>
       <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
