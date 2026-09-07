@@ -2,6 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { EMAIL, TELEPHONE_DISPLAY, TELEPHONE_E164 } from "@/lib/contact";
 
 type AuditFormData = {
   websiteUrl: string;
@@ -24,6 +25,8 @@ const challengeOptions = [
 
 export function AuditForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [sending, setSending] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm<AuditFormData>();
 
   const onSubmit = async (data: AuditFormData) => {
@@ -35,6 +38,8 @@ export function AuditForm() {
       email: data.email,
       name: data.name,
     };
+    setSending(true);
+    setFailed(false);
     try {
       const response = await fetch("/__forms.html", {
         method: "POST",
@@ -42,8 +47,11 @@ export function AuditForm() {
         body: new URLSearchParams(params).toString(),
       });
       if (response.ok) setSubmitted(true);
+      else setFailed(true);
     } catch {
-      setSubmitted(true);
+      setFailed(true);
+    } finally {
+      setSending(false);
     }
   };
 
@@ -135,11 +143,40 @@ export function AuditForm() {
         )}
       </div>
 
+      {failed && (
+        <div
+          role="alert"
+          className="rounded-lg border border-red-500/50 bg-red-500/10 p-4 text-sm"
+        >
+          <p className="font-semibold text-[var(--primary)]">
+            That didn&apos;t send.
+          </p>
+          <p className="mt-1 text-[var(--muted-foreground)]">
+            Something went wrong at my end, not yours. Please email me at{" "}
+            <a
+              href={`mailto:${EMAIL}`}
+              className="text-[var(--accent)] hover:underline"
+            >
+              {EMAIL}
+            </a>{" "}
+            or call{" "}
+            <a
+              href={`tel:${TELEPHONE_E164}`}
+              className="text-[var(--accent)] hover:underline"
+            >
+              {TELEPHONE_DISPLAY}
+            </a>
+            , and I&apos;ll pick it up straight away.
+          </p>
+        </div>
+      )}
+
       <button
         type="submit"
-        className="w-full rounded-lg bg-[var(--accent)] px-5 py-2.5 font-medium text-white transition-colors hover:bg-[var(--accent-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2"
+        disabled={sending}
+        className="w-full rounded-lg bg-[var(--accent)] px-5 py-2.5 font-medium text-white transition-colors hover:bg-[var(--accent-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 disabled:opacity-60"
       >
-        Get My Audit
+        {sending ? "Sending..." : "Get My Audit"}
       </button>
     </form>
   );

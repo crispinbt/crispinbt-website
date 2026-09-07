@@ -1,3 +1,5 @@
+import { EMAIL, TELEPHONE_E164 } from "@/lib/contact";
+
 const SITE = "https://crispinbt.co.uk";
 const PERSON_ID = `${SITE}/#person`;
 const BUSINESS_ID = `${SITE}/#business`;
@@ -55,6 +57,10 @@ export function SiteSchema() {
         url: SITE,
         image: `${SITE}/images/headshot.jpg`,
         sameAs: SAME_AS,
+        // Must match the Google Business Profile exactly. Both come from
+        // lib/contact.ts so the site and the schema cannot drift apart.
+        telephone: TELEPHONE_E164,
+        email: EMAIL,
         founder: { "@id": PERSON_ID },
         areaServed: [
           { "@type": "City", name: "Swansea" },

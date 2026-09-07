@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { LogoMark } from "./Logo";
+import { EMAIL, TELEPHONE_DISPLAY, TELEPHONE_E164 } from "@/lib/contact";
 
 const footerLinks = [
   { href: "/services", label: "Services" },
@@ -23,6 +24,22 @@ export function Footer() {
               <p className="font-semibold">Crispin Boden-Tebbutt</p>
               <p className="mt-1 text-sm text-white/80">
                 Based in Swansea, South Wales
+              </p>
+              <p className="mt-3 text-sm">
+                <a
+                  href={`tel:${TELEPHONE_E164}`}
+                  className="text-white/80 hover:text-white"
+                >
+                  {TELEPHONE_DISPLAY}
+                </a>
+              </p>
+              <p className="mt-1 text-sm">
+                <a
+                  href={`mailto:${EMAIL}`}
+                  className="text-white/80 hover:text-white"
+                >
+                  {EMAIL}
+                </a>
               </p>
             </div>
           </div>

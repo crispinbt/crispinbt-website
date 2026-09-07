@@ -2,6 +2,7 @@
 
 import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { EMAIL, TELEPHONE_DISPLAY, TELEPHONE_E164 } from "@/lib/contact";
 
 type ContactFormData = {
   name: string;
@@ -15,8 +16,18 @@ type ContactFormData = {
 
 export function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [failed, setFailed] = useState(false);
+  const [sending, setSending] = useState(false);
   const { register, handleSubmit, formState: { errors } } = useForm<ContactFormData>();
 
+  /**
+   * Never report success unless the POST actually returned 2xx. The previous
+   * version set `submitted` inside the catch and had no else on `response.ok`,
+   * so a network failure or an unregistered Netlify form showed "Thanks for
+   * your message" while the enquiry went nowhere, and a non-2xx left the
+   * button doing nothing at all. On a site whose only job is enquiries, a
+   * silently dropped lead is the worst possible failure.
+   */
   const onSubmit = async (data: ContactFormData) => {
     if (data.honeypot) return;
     const params: Record<string, string> = { "form-name": "contact" };
@@ -24,6 +35,8 @@ export function ContactForm() {
       const v = data[key];
       if (v) params[key] = String(v);
     });
+    setSending(true);
+    setFailed(false);
     try {
       const response = await fetch("/__forms.html", {
         method: "POST",
@@ -31,8 +44,11 @@ export function ContactForm() {
         body: new URLSearchParams(params).toString(),
       });
       if (response.ok) setSubmitted(true);
+      else setFailed(true);
     } catch {
-      setSubmitted(true);
+      setFailed(true);
+    } finally {
+      setSending(false);
     }
   };
 
@@ -156,11 +172,40 @@ export function ContactForm() {
         </select>
       </div>
 
+      {failed && (
+        <div
+          role="alert"
+          className="rounded-lg border border-red-500/50 bg-red-500/10 p-4 text-sm"
+        >
+          <p className="font-semibold text-[var(--primary)]">
+            That didn&apos;t send.
+          </p>
+          <p className="mt-1 text-[var(--muted-foreground)]">
+            Something went wrong at my end, not yours. Please email me at{" "}
+            <a
+              href={`mailto:${EMAIL}`}
+              className="text-[var(--accent)] hover:underline"
+            >
+              {EMAIL}
+            </a>{" "}
+            or call{" "}
+            <a
+              href={`tel:${TELEPHONE_E164}`}
+              className="text-[var(--accent)] hover:underline"
+            >
+              {TELEPHONE_DISPLAY}
+            </a>
+            , and I&apos;ll pick it up straight away.
+          </p>
+        </div>
+      )}
+
       <button
         type="submit"
-        className="w-full rounded-lg bg-[var(--accent)] px-5 py-2.5 font-medium text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2"
+        disabled={sending}
+        className="w-full rounded-lg bg-[var(--accent)] px-5 py-2.5 font-medium text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)] focus:outline-none focus:ring-2 focus:ring-[var(--accent)] focus:ring-offset-2 disabled:opacity-60"
       >
-        Send message
+        {sending ? "Sending..." : "Send message"}
       </button>
     </form>
   );

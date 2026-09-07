@@ -2,6 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ContactForm } from "@/components/ContactForm";
 import { CalendlyEmbed } from "@/components/CalendlyEmbed";
+import {
+  CALENDLY_URL,
+  EMAIL,
+  TELEPHONE_DISPLAY,
+  TELEPHONE_E164,
+} from "@/lib/contact";
 
 export const metadata: Metadata = {
   title: "Contact | Swansea SEO Consultant",
@@ -32,17 +38,72 @@ export default function ContactPage() {
           </div>
         </section>
 
-        <section>
-          <h2 className="text-xl font-semibold text-[var(--primary)]">
-            Book a Free 30-min Consultation
-          </h2>
-          <p className="mt-2 text-[var(--muted-foreground)]">
-            Pick a time that works for you.
-          </p>
-          <div className="mt-6">
-            <CalendlyEmbed />
-          </div>
-        </section>
+        {CALENDLY_URL ? (
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--primary)]">
+              Book a Free 30-min Consultation
+            </h2>
+            <p className="mt-2 text-[var(--muted-foreground)]">
+              Pick a time that works for you.
+            </p>
+            <div className="mt-6">
+              <CalendlyEmbed url={CALENDLY_URL} />
+            </div>
+          </section>
+        ) : (
+          <section>
+            <h2 className="text-xl font-semibold text-[var(--primary)]">
+              Prefer to talk?
+            </h2>
+            <p className="mt-2 text-[var(--muted-foreground)]">
+              Call or email me directly and we&apos;ll find half an hour that
+              suits. No pitch deck, no obligation.
+            </p>
+            <dl className="mt-6 space-y-4">
+              <div>
+                <dt className="text-sm font-medium text-[var(--primary)]">
+                  Phone
+                </dt>
+                <dd className="mt-1">
+                  <a
+                    href={`tel:${TELEPHONE_E164}`}
+                    className="text-lg text-[var(--accent)] hover:underline"
+                  >
+                    {TELEPHONE_DISPLAY}
+                  </a>
+                </dd>
+              </div>
+              <div>
+                <dt className="text-sm font-medium text-[var(--primary)]">
+                  Email
+                </dt>
+                <dd className="mt-1">
+                  <a
+                    href={`mailto:${EMAIL}`}
+                    className="text-lg text-[var(--accent)] hover:underline"
+                  >
+                    {EMAIL}
+                  </a>
+                </dd>
+              </div>
+            </dl>
+
+            <h3 className="mt-10 text-sm font-semibold text-[var(--primary)]">
+              What happens next
+            </h3>
+            <ol className="mt-3 list-decimal space-y-2 pl-5 text-[var(--muted-foreground)]">
+              <li>I reply within one working day, usually the same day.</li>
+              <li>
+                A 30-minute call to understand the site, the goal and the
+                constraints. I&apos;ll have looked at your site first.
+              </li>
+              <li>
+                A written scope and a fixed price, or an honest answer that I am
+                not the right person for it.
+              </li>
+            </ol>
+          </section>
+        )}
       </div>
 
       <div className="mt-16 border-t border-[var(--border)] pt-12">
@@ -124,12 +185,21 @@ export default function ContactPage() {
         </h2>
         <ul className="mt-4 space-y-2 text-[var(--muted-foreground)]">
           <li>
-            <strong>Email:</strong>{" "}
+            <strong>Phone:</strong>{" "}
             <a
-              href="mailto:crispinbt@gmail.com"
+              href={`tel:${TELEPHONE_E164}`}
               className="text-[var(--accent)] hover:underline"
             >
-              crispinbt@gmail.com
+              {TELEPHONE_DISPLAY}
+            </a>
+          </li>
+          <li>
+            <strong>Email:</strong>{" "}
+            <a
+              href={`mailto:${EMAIL}`}
+              className="text-[var(--accent)] hover:underline"
+            >
+              {EMAIL}
             </a>
           </li>
           <li>

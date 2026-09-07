@@ -3,14 +3,11 @@
 import Script from "next/script";
 
 type CalendlyEmbedProps = {
-  url?: string;
+  /** A scheduling link that has been verified to resolve. */
+  url: string;
 };
 
-const defaultUrl =
-  process.env.NEXT_PUBLIC_CALENDLY_URL ||
-  "https://calendly.com/crispinbt/30min";
-
-export function CalendlyEmbed({ url = defaultUrl }: CalendlyEmbedProps) {
+export function CalendlyEmbed({ url }: CalendlyEmbedProps) {
   return (
     <div className="min-h-[700px] w-full">
       <Script
