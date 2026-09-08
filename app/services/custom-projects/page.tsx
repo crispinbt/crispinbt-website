@@ -4,7 +4,7 @@ import { ServiceLayout } from "@/components/ServiceLayout";
 export const metadata: Metadata = {
   title: "Custom SEO Projects & Builds",
   description:
-    "Website builds, bespoke tools and SEO consultancy. Tailored solutions for UK businesses. Day rates £300–400.",
+    "Website builds, bespoke tools and SEO consultancy. Tailored solutions for UK businesses. Day rates £350–400.",
 };
 
 export default function CustomProjectsPage() {
@@ -46,7 +46,7 @@ export default function CustomProjectsPage() {
       </p>
 
       <h2>Typical timeline</h2>
-      <p>Defined per project. Day rates: £300–400/day.</p>
+      <p>Defined per project. Day rates: £350–400/day.</p>
 
       <p className="mt-8 rounded-lg border border-[var(--border)] bg-[var(--primary)]/5 p-4">
         <strong>Need something specific?</strong> Contact for a bespoke

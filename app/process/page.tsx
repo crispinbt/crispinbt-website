@@ -106,8 +106,8 @@ export default function ProcessPage() {
           Pricing & delivery
         </h2>
         <p className="mt-3 text-[var(--muted-foreground)]">
-          One-off consultancy: £400/day. Ongoing work: £300/day. Multi-channel
-          projects: £300/day. Delivery plans are flexible and tailored to your
+          One-off consultancy: £400/day. Ongoing work: £350/day. Multi-channel
+          projects: £350/day. Delivery plans are flexible and tailored to your
           needs. For unique projects or custom strategies, we can scope and quote
           accordingly.
         </p>

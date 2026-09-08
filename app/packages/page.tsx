@@ -40,7 +40,7 @@ const packages = [
   },
   {
     name: "Ongoing Retainer",
-    price: "£300/day",
+    price: "£350/day",
     type: "ongoing",
     description: "Flexible scope, full implementation and strategic partnership.",
     features: [
@@ -119,7 +119,7 @@ export default function PackagesPage() {
           Custom projects available
         </h2>
         <p className="mt-2 text-[var(--muted-foreground)]">
-          One-off: £400/day. Ongoing: £300/day. Need something specific?
+          One-off: £400/day. Ongoing: £350/day. Need something specific?
           Contact for a bespoke quote.
         </p>
         <CTA href="/contact" variant="primary" className="mt-6">
