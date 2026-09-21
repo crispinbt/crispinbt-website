@@ -4,7 +4,7 @@ import Image from "next/image";
 export const metadata: Metadata = {
   title: "About | SEO Consultant, Swansea",
   description:
-    "SEO consultant with nearly a decade of experience. BBC and ITV journalism background. Based in Swansea, serving UK businesses. Data-driven, technical SEO focus.",
+    "SEO consultant with nearly a decade of experience. Former BBC and ITV journalist, based in Swansea and working with businesses across the UK. Technical SEO and content strategy.",
 };
 
 export default function AboutPage() {
@@ -33,9 +33,8 @@ export default function AboutPage() {
       <div className="mt-12 space-y-8 text-[var(--muted-foreground)]">
         <section>
           <p className="leading-relaxed">
-            I&apos;m an SEO consultant with nearly a decade of experience
-            helping businesses grow organic traffic and revenue. Based in
-            Swansea, South Wales, I work with clients across the UK—
+            I&apos;m an SEO consultant based in Swansea, South Wales, with
+            nearly a decade in search. I work with businesses across the UK,
             from startups to household names.
           </p>
         </section>
@@ -45,12 +44,11 @@ export default function AboutPage() {
             Career highlights
           </h2>
           <p className="mt-4 leading-relaxed">
-            My background is in journalism—BBC, ITV and national
-            publications. That foundation shapes how I think about
-            content: clarity, credibility and user intent matter. I
-            moved into SEO when I saw how data and technical
-            optimisation could unlock results that content alone
-            couldn&apos;t achieve.
+            I started out in journalism, at the BBC, ITV and national
+            publications. It still shapes how I think about content: be clear,
+            make sure it&apos;s true, and write it for the person searching. I
+            moved into SEO when I saw how often the technical side decided
+            whether good content got found at all.
           </p>
         </section>
 
@@ -59,23 +57,40 @@ export default function AboutPage() {
             Why SEO?
           </h2>
           <p className="mt-4 leading-relaxed">
-            SEO sits at the intersection of content, technology and
-            data. It rewards rigour and iteration. I specialise in
-            technical SEO and content strategy because that&apos;s where
-            the biggest wins often hide—especially when everyone else
-            is chasing links and vague &quot;content marketing.&quot;
+            SEO sits between content, technology and data, and it rewards
+            people who check their work. I specialise in technical SEO and
+            content strategy because that&apos;s where I usually find the
+            biggest wins. Often it&apos;s on sites where the effort has gone
+            into links and a vague &quot;content marketing&quot; plan.
           </p>
         </section>
 
         <section>
           <h2 className="text-xl font-semibold text-[var(--primary)]">
-            Philosophy
+            How I work
           </h2>
           <p className="mt-4 leading-relaxed">
-            Data-driven, no fluff. I don&apos;t promise guarantees or
-            make up ROI predictions. I focus on what we can measure,
-            prioritise with frameworks like RICE, and deliver
-            actionable work that moves the needle.
+            I don&apos;t promise rankings or make up ROI predictions. I measure
+            what can be measured, rank the work by impact against effort
+            (RICE), and hand over recommendations your team can act on
+            straight away.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-xl font-semibold text-[var(--primary)]">
+            Local work
+          </h2>
+          <p className="mt-4 leading-relaxed">
+            For businesses in Swansea, Neath Port Talbot and Carmarthenshire,
+            I do Google Business Profile and map pack work under the name{" "}
+            <a
+              href="https://citedsearch.co.uk/"
+              className="font-medium text-[var(--accent)] hover:underline"
+            >
+              Cited Search
+            </a>
+            . Same person, same company (CBT Consulting Ltd).
           </p>
         </section>
 
@@ -83,7 +98,7 @@ export default function AboutPage() {
           <h2 className="text-xl font-semibold text-[var(--primary)]">
             Connect
           </h2>
-          <p className="mt-4">
+          <p className="mt-4 flex gap-6">
             <a
               href="https://www.linkedin.com/in/crispinbt"
               target="_blank"
@@ -91,6 +106,14 @@ export default function AboutPage() {
               className="font-medium text-[var(--accent)] hover:underline"
             >
               LinkedIn
+            </a>
+            <a
+              href="https://www.youtube.com/@crispinboden-tebbutt5715"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[var(--accent)] hover:underline"
+            >
+              YouTube
             </a>
           </p>
         </section>

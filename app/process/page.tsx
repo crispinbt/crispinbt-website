@@ -4,7 +4,7 @@ import { CTA } from "@/components/CTA";
 export const metadata: Metadata = {
   title: "SEO Process & Methodology",
   description:
-    "How I approach SEO: Discovery & Audit, Strategy, Implementation, Authority Building and Measurement. Data-driven methodology for UK businesses.",
+    "How I approach SEO: audit, strategy, implementation, authority building and measurement. Five stages, priced by the day, for UK businesses.",
 };
 
 const steps = [
@@ -12,12 +12,12 @@ const steps = [
     title: "Discovery & Audit",
     items: [
       "Technical health check – site structure, crawlability, Core Web Vitals",
-      "Competitive landscape analysis – where you sit vs competitors",
+      "Competitor analysis – where you sit against the sites outranking you",
       "Keyword gap analysis – opportunities you’re missing",
       "Content audit – what’s working, what’s not",
     ],
     detail:
-      "We start by understanding where you are. A full SEO audit reveals technical issues, content gaps and competitive positioning. No guessing—everything is data-backed.",
+      "I start with where you are now. The audit covers technical issues, content gaps and how you compare with competitors, and every finding comes with the data behind it.",
   },
   {
     title: "Strategy Development",
@@ -28,7 +28,7 @@ const steps = [
       "Delivery plan with clear milestones",
     ],
     detail:
-      "Strategy turns audit findings into an actionable roadmap. We prioritise work that moves the needle, not busy-work. Delivery plans are flexible to fit your budget and timeline.",
+      "The strategy turns the audit into a plan you can work through. I put the changes most likely to affect traffic and enquiries first, and fit the plan to your budget and timeline.",
   },
   {
     title: "Implementation",
@@ -39,7 +39,7 @@ const steps = [
       "Local SEO – Google Business Profile, citations, reviews",
     ],
     detail:
-      "Execution is where results happen. Whether it’s technical fixes, new content or local optimisation, work is delivered in clear sprints with regular check-ins.",
+      "Technical fixes, new content or local work, delivered in short blocks with regular check-ins. I can do it myself or brief your developers and writers.",
   },
   {
     title: "Authority Building",
@@ -49,7 +49,7 @@ const steps = [
       "Brand mentions – visibility beyond direct backlinks",
     ],
     detail:
-      "Authority compounds over time. We build E-E-A-T into your content and presence, and pursue links and mentions that support your rankings and reputation.",
+      "This is the slow part. I make sure your content shows real expertise and who’s behind it, and go after links and mentions from sites that are relevant to you.",
   },
   {
     title: "Measurement & Iteration",
@@ -59,7 +59,7 @@ const steps = [
       "Continuous optimisation – re-prioritise based on data",
     ],
     detail:
-      "SEO is iterative. We track what matters, report in plain English and adjust the plan as results come in. No vanity metrics—focus on outcomes that affect revenue.",
+      "I track traffic, rankings and enquiries, report in plain English, and change the plan when the results say so. Reports focus on the numbers that affect revenue.",
   },
 ];
 
@@ -71,8 +71,8 @@ export default function ProcessPage() {
           Process & Methodology
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-[var(--muted-foreground)]">
-          A data-driven approach that moves from audit to strategy to
-          implementation and iteration. Each phase builds on the last.
+          How a project runs, from the first audit to monthly measurement.
+          Each stage builds on the one before it.
         </p>
       </header>
 
@@ -107,9 +107,8 @@ export default function ProcessPage() {
         </h2>
         <p className="mt-3 text-[var(--muted-foreground)]">
           One-off consultancy: £400/day. Ongoing work: £350/day. Multi-channel
-          projects: £350/day. Delivery plans are flexible and tailored to your
-          needs. For unique projects or custom strategies, we can scope and quote
-          accordingly.
+          projects: £350/day. The plan fits your budget, and anything that
+          doesn&apos;t fit a day rate gets its own scope and quote.
         </p>
       </section>
 

@@ -33,7 +33,7 @@ export default function SEOAutomationPage() {
       <ol>
         <li>Discovery: identify repetitive tasks and data gaps</li>
         <li>Design: scope automation or tool requirements</li>
-        <li>Build: scripts, APIs, dashboards or bespoke tools</li>
+        <li>Build: scripts, APIs, dashboards or custom tools</li>
         <li>Deploy and document</li>
         <li>Iterate based on use</li>
       </ol>

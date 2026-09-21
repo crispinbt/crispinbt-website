@@ -4,20 +4,20 @@ import { ServiceLayout } from "@/components/ServiceLayout";
 export const metadata: Metadata = {
   title: "Custom SEO Projects & Builds",
   description:
-    "Website builds, bespoke tools and SEO consultancy. Tailored solutions for UK businesses. Day rates £350–400.",
+    "Website builds, one-off tools and SEO consultancy for UK businesses, scoped per project. Day rates £350–400.",
 };
 
 export default function CustomProjectsPage() {
   return (
     <ServiceLayout
       path="/services/custom-projects"
-      title="Custom & Bespoke Work"
-      subtitle="Website builds, bespoke tools and consultancy. When you need something tailored."
+      title="Custom Projects"
+      subtitle="Website builds, one-off tools and consultancy for anything that doesn't fit a package."
     >
       <h2>What it is</h2>
       <p>
         Custom projects cover anything outside standard audits or retainers.
-        Website builds, migration support, bespoke dashboards, content
+        Website builds, migration support, custom dashboards, content
         projects or ad-hoc consultancy. Day rates apply for flexible,
         outcome-focused work.
       </p>
@@ -49,8 +49,8 @@ export default function CustomProjectsPage() {
       <p>Defined per project. Day rates: £350–400/day.</p>
 
       <p className="mt-8 rounded-lg border border-[var(--border)] bg-[var(--primary)]/5 p-4">
-        <strong>Need something specific?</strong> Contact for a bespoke
-        quote. No obligation.
+        <strong>Need something specific?</strong> Get in touch and I&apos;ll
+        quote for it. No obligation.
       </p>
     </ServiceLayout>
   );

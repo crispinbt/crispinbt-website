@@ -27,7 +27,7 @@ const services = [
   {
     title: "Content Strategy",
     description:
-      "Hub-and-spoke architecture, E-E-A-T signals and topical authority. Content that ranks and converts.",
+      "Content plans built around what your customers search for, organised so each page supports the others.",
     href: "/services/content-strategy",
     icon: (
       <svg
@@ -48,7 +48,7 @@ const services = [
   {
     title: "Local SEO",
     description:
-      "Google Business Profile optimisation, location pages and local link building. Win local search.",
+      "Google Business Profile, location pages and local links, for single sites and multi-location brands.",
     href: "/services/local-seo",
     icon: (
       <svg
@@ -75,7 +75,7 @@ const services = [
   {
     title: "SEO Automation",
     description:
-      "Custom tooling, programmatic SEO and process efficiency. Scale your efforts without scaling headcount.",
+      "Scripts, API pipelines and reporting that take the repetitive work off your team.",
     href: "/services/seo-automation",
     icon: (
       <svg
@@ -117,7 +117,7 @@ const services = [
   {
     title: "Custom Projects",
     description:
-      "Website builds, bespoke tools and consultancy. When you need something tailored.",
+      "Website builds, one-off tools and consultancy for anything that doesn't fit a package.",
     href: "/services/custom-projects",
     icon: (
       <svg

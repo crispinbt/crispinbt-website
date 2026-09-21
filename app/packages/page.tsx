@@ -12,12 +12,12 @@ const packages = [
     name: "Foundation Audit",
     price: "£1,200 – £1,800",
     type: "one-time",
-    description: "Technical audit, keyword research, competitor analysis and actionable recommendations.",
+    description: "Technical audit, keyword research, competitor analysis and prioritised recommendations.",
     features: [
       "Technical SEO audit",
       "Keyword research",
       "Competitor analysis",
-      "Actionable recommendations",
+      "Prioritised recommendations",
     ],
     cta: "Get Started",
     ctaHref: "/contact",
@@ -63,8 +63,8 @@ export default function PackagesPage() {
           Packages & Pricing
         </h1>
         <p className="mx-auto mt-4 max-w-2xl text-[var(--muted-foreground)]">
-          Transparent pricing. Choose a package or get a bespoke quote for
-          custom projects.
+          Prices are published. Pick a package, or ask for a quote if you need
+          something different.
         </p>
       </header>
 
@@ -120,7 +120,7 @@ export default function PackagesPage() {
         </h2>
         <p className="mt-2 text-[var(--muted-foreground)]">
           One-off: £400/day. Ongoing: £350/day. Need something specific?
-          Contact for a bespoke quote.
+          Get in touch for a quote.
         </p>
         <CTA href="/contact" variant="primary" className="mt-6">
           Request Custom Quote

@@ -36,7 +36,7 @@ export default function TechnicalSEOPage() {
         <li>Indexation and crawlability analysis</li>
         <li>Core Web Vitals and performance review</li>
         <li>Structured data and schema audit</li>
-        <li>Actionable recommendations with prioritisation</li>
+        <li>Prioritised recommendations your developers can work from</li>
         <li>Implementation support (optional)</li>
       </ol>
 

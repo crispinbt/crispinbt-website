@@ -13,6 +13,15 @@ const SAME_AS = [
   "https://www.upwork.com/freelancers/~0184beec6ba4ae1adf",
 ];
 
+// Person only. Cited Search is the trading name for the local work, run by the
+// same person through the same company, so the two sites point at each other
+// openly rather than looking like unrelated businesses.
+const PERSON_SAME_AS = [
+  ...SAME_AS,
+  "https://www.youtube.com/@crispinboden-tebbutt5715",
+  "https://citedsearch.co.uk/about/",
+];
+
 function JsonLdScript({ schema }: { schema: object }) {
   return (
     <script
@@ -38,7 +47,7 @@ export function SiteSchema() {
         jobTitle: "SEO Consultant",
         url: SITE,
         image: `${SITE}/images/headshot.jpg`,
-        sameAs: SAME_AS,
+        sameAs: PERSON_SAME_AS,
         knowsAbout: [
           "Search engine optimisation",
           "Technical SEO",
@@ -52,6 +61,7 @@ export function SiteSchema() {
         "@type": "ProfessionalService",
         "@id": BUSINESS_ID,
         name: "Crispin Boden-Tebbutt - SEO Consultant",
+        legalName: "CBT Consulting Ltd",
         description:
           "SEO consultant based in Swansea, South Wales. Technical SEO, content strategy, local SEO and custom projects for UK businesses.",
         url: SITE,

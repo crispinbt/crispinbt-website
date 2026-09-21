@@ -4,7 +4,7 @@ import { ServiceLayout } from "@/components/ServiceLayout";
 export const metadata: Metadata = {
   title: "Content Strategy for SEO",
   description:
-    "Hub-and-spoke content architecture, E-E-A-T signals and topical authority. Data-driven content strategy for UK businesses.",
+    "Hub-and-spoke content architecture, E-E-A-T signals and topical authority. Content strategy for UK businesses, planned from search data.",
 };
 
 export default function ContentStrategyPage() {

@@ -24,7 +24,7 @@ export const metadata: Metadata = {
     template: "%s | Crispin Boden-Tebbutt",
   },
   description:
-    "Data-driven SEO consultant based in Swansea, South Wales. Technical SEO, content strategy, local SEO and custom projects for UK businesses.",
+    "SEO consultant based in Swansea, South Wales. Technical SEO, content strategy, local SEO and custom projects for UK businesses.",
   metadataBase: new URL("https://crispinbt.co.uk"),
   openGraph: {
     type: "website",

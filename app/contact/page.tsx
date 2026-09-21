@@ -98,8 +98,8 @@ export default function ContactPage() {
                 constraints. I&apos;ll have looked at your site first.
               </li>
               <li>
-                A written scope and a fixed price, or an honest answer that I am
-                not the right person for it.
+                A written scope and a fixed price, or a straight answer if
+                I&apos;m not the right person for it.
               </li>
             </ol>
           </section>
@@ -134,32 +134,32 @@ export default function ContactPage() {
           <li>
             <Link href="/services/technical-seo" className="text-[var(--accent)] hover:underline">
               Technical SEO
-            </Link>{" "}
-            — audits, crawlability, indexing and Core Web Vitals
+            </Link>
+            : audits, crawlability, indexing and Core Web Vitals
           </li>
           <li>
             <Link href="/services/content-strategy" className="text-[var(--accent)] hover:underline">
               Content strategy
-            </Link>{" "}
-            — topical authority, hub-and-spoke architecture and E-E-A-T
+            </Link>
+            : topical authority, hub-and-spoke architecture and E-E-A-T
           </li>
           <li>
             <Link href="/services/local-seo" className="text-[var(--accent)] hover:underline">
               Local SEO
-            </Link>{" "}
-            — Google Business Profile, location pages and local links
+            </Link>
+            : Google Business Profile, location pages and local links
           </li>
           <li>
             <Link href="/services/seo-automation" className="text-[var(--accent)] hover:underline">
               SEO automation
-            </Link>{" "}
-            — custom tooling, programmatic SEO and reporting pipelines
+            </Link>
+            : custom tooling, programmatic SEO and reporting pipelines
           </li>
           <li>
             <Link href="/services/custom-projects" className="text-[var(--accent)] hover:underline">
               Custom projects
-            </Link>{" "}
-            — website builds, bespoke tools and one-off consultancy
+            </Link>
+            : website builds, one-off tools and consultancy
           </li>
         </ul>
         <p className="mt-6 max-w-3xl text-[var(--muted-foreground)]">
