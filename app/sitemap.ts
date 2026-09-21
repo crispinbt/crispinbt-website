@@ -49,6 +49,7 @@ const staticRoutes: { path: string; source: string; priority: number }[] = [
   { path: "/about", source: "app/about/page.tsx", priority: 0.7 },
   { path: "/contact", source: "app/contact/page.tsx", priority: 0.9 },
   { path: "/audit", source: "app/audit/page.tsx", priority: 0.9 },
+  { path: "/local-audit", source: "app/local-audit/page.tsx", priority: 0.8 },
   // /gallery and /gallery/ko-gym-charity-event are deliberately omitted: they
   // are noindex, and a sitemap should only list URLs you want indexed.
 ];

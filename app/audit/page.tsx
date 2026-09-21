@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { AuditForm } from "@/components/AuditForm";
 
 export const metadata: Metadata = {
@@ -39,6 +40,14 @@ export default function AuditPage() {
           reason for each. It&apos;s a first look rather than the full paid
           audit, but it should tell you whether there&apos;s something worth
           fixing. If there isn&apos;t, I&apos;ll tell you that too.
+        </p>
+        <p>
+          If you&apos;re a local business and want to know how you show up on
+          Google, the{" "}
+          <Link href="/local-audit" className="text-[var(--accent)] hover:underline">
+            local visibility audit
+          </Link>{" "}
+          is the one for that.
         </p>
       </section>
 
