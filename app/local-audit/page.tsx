@@ -7,6 +7,9 @@ export const metadata: Metadata = {
     "A written audit of how your local business shows up on Google: profile, reviews against the leaders, and your site on a phone. Back in two working days.",
 };
 
+// Monzo Business reusable payment link, £195 "SEO Audit". Swap for the £295 link after ten.
+const PAY_URL = "https://monzo.com/pay/r/cbt-consulting-ltd_jTgXGh7WT5BXD9";
+
 const primaryBtn =
   "inline-flex items-center justify-center rounded-lg bg-[var(--accent)] px-5 py-2.5 text-sm font-medium text-[var(--accent-foreground)] transition-colors hover:bg-[var(--accent-hover)]";
 const secondaryBtn =
@@ -72,8 +75,11 @@ export default function LocalAuditPage() {
           Launch price for the first ten businesses, then £295.
         </p>
         <div className="mt-6 flex flex-wrap gap-4">
-          <Link href="/contact" className={primaryBtn}>
-            Book your audit
+          <a href={PAY_URL} className={primaryBtn}>
+            Pay £195 and book
+          </a>
+          <Link href="/contact" className={secondaryBtn}>
+            Ask a question first
           </Link>
         </div>
       </header>
@@ -100,7 +106,8 @@ export default function LocalAuditPage() {
         <div>
           <h2 className="text-xl font-semibold text-[var(--primary)]">How it works</h2>
           <ul className="mt-4 list-disc space-y-2 pl-5 text-[var(--muted-foreground)]">
-            <li>You book, and tell me your business name and what you&apos;d like to be found for</li>
+            <li>You pay £195 through a secure Monzo bank transfer link</li>
+            <li>You send me your business name and what you&apos;d like to be found for, through the <Link href="/contact" className="text-[var(--accent)] hover:underline">contact form</Link> or by replying to my email</li>
             <li>I run the checks and write it up myself</li>
             <li>The report lands in your inbox within two working days, ready to read on your phone, print or forward</li>
           </ul>
@@ -136,9 +143,9 @@ export default function LocalAuditPage() {
           £195 for the first ten, then £295. Back within two working days.
         </p>
         <div className="mt-6 flex flex-wrap gap-4">
-          <Link href="/contact" className={primaryBtn}>
-            Book your audit
-          </Link>
+          <a href={PAY_URL} className={primaryBtn}>
+            Pay £195 and book
+          </a>
           <Link href="/audit" className={secondaryBtn}>
             Or get the free website audit
           </Link>
