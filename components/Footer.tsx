@@ -56,9 +56,15 @@ export function Footer() {
           </nav>
         </div>
         <div className="mt-8 flex flex-col gap-4 border-t border-white/20 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-sm text-white/60">
-            &copy; {new Date().getFullYear()} Crispin Boden-Tebbutt
-          </p>
+          <div>
+            <p className="text-sm text-white/60">
+              &copy; {new Date().getFullYear()} Crispin Boden-Tebbutt
+            </p>
+            <p className="mt-1 text-xs text-white/60">
+              CBT Consulting Ltd, registered in England and Wales, company number
+              15359662. Registered office: 29 Lon Ger Y Coed, Cockett, Swansea SA2 0YH.
+            </p>
+          </div>
           <div className="flex gap-6">
             <a
               href="https://www.linkedin.com/in/crispinbt"
