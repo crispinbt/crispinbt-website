@@ -41,9 +41,11 @@ export default function CaseStudiesPage() {
             <p className="mt-2 line-clamp-2 text-sm text-[var(--muted-foreground)]">
               {cs.frontmatter.challenge}
             </p>
-            <p className="mt-4 text-sm font-medium text-[var(--accent)]">
-              {cs.frontmatter.results}
-            </p>
+            {cs.frontmatter.results && (
+              <p className="mt-4 text-sm font-medium text-[var(--accent)]">
+                {cs.frontmatter.results}
+              </p>
+            )}
           </Link>
         ))}
       </div>

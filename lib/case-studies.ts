@@ -10,8 +10,8 @@ export type CaseStudyFrontmatter = {
   clientIndustry: string;
   challenge: string;
   approach: string;
-  results: string;
-  timeline: string;
+  results?: string;
+  timeline?: string;
   metaDescription?: string;
   image?: string;
 };

@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: { absolute: `${cs.frontmatter.title} | Case Study` },
     description:
       cs.frontmatter.metaDescription ??
-      `${cs.frontmatter.challenge} ${cs.frontmatter.results}`,
+      [cs.frontmatter.challenge, cs.frontmatter.results].filter(Boolean).join(" "),
   };
 }
 
@@ -70,12 +70,16 @@ export default async function CaseStudyPage({ params }: Props) {
           <span>
             <strong>Challenge:</strong> {cs.frontmatter.challenge}
           </span>
-          <span>
-            <strong>Results:</strong> {cs.frontmatter.results}
-          </span>
-          <span>
-            <strong>Timeline:</strong> {cs.frontmatter.timeline}
-          </span>
+          {cs.frontmatter.results && (
+            <span>
+              <strong>Results:</strong> {cs.frontmatter.results}
+            </span>
+          )}
+          {cs.frontmatter.timeline && (
+            <span>
+              <strong>Timeline:</strong> {cs.frontmatter.timeline}
+            </span>
+          )}
         </div>
       </header>
 
